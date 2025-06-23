@@ -6,3 +6,27 @@
 * {
   @apply transition-all scroll-smooth;
 }
+
+@theme {
+  --color-primary: #ff6f49;
+  --color-secondary: #0a0c18;
+}
+
+#services {
+  @apply scroll-m-[60px] lg:scroll-m-[80px];
+}
+#about {
+  @apply scroll-m-[60px] lg:scroll-m-[80px];
+}
+#contact {
+  @apply scroll-m-[60px] lg:scroll-m-[80px];
+}
+#myworkskills {
+  @apply scroll-m-[60px] lg:scroll-m-[80px];
+}
+#portfolio {
+  @apply scroll-m-[60px] lg:scroll-m-[80px];
+}
+#whyhireme {
+  @apply scroll-m-[60px] lg:scroll-m-[80px];
+}

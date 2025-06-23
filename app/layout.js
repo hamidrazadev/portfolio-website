@@ -30,8 +30,7 @@ export default function RootLayout({ children }) {
           <nav className="flex flex-col items-center sticky top-0 z-50 w-full my-4">
             <Navbar />
           </nav>
-          <ThemeToggle />
-          <main className="min-h-screen">
+          <main className="min-h-[calc(2*100vh)]">
             {children}
           </main>
           <footer>
