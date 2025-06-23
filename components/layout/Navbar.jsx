@@ -34,7 +34,7 @@ export default function Navbar() {
     const [isSidePanelOpen, setIsSidePanelOpen] = useState(false);
 
     return (
-        <div className="container mx-auto rounded-full bg-white shadow shadow-slate-50 lg:p-4 flex items-center justify-between lg:h-fit h-[60px] p-2">
+        <div className="container mx-auto rounded-full bg-white shadow shadow-slate-50 lg:p-4 flex items-center justify-between lg:h-[80px] h-[60px] p-2">
             <Link href={'#top'} className="items-center justify-center flex">
                 <Image src={'/assets/logo.png'} width={150} height={150} />
             </Link>
