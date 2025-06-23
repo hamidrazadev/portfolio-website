@@ -13,7 +13,7 @@ export default function ThemeToggle() {
     return (
         <button
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="p-2 border rounded bg-slate-200 dark:bg-slate-700 text-black dark:text-white"
+            className="p-2 bg-slate-300 light:bg-slate-700 rounded"
         >
             Switch to {theme === 'dark' ? 'Light' : 'Dark'} Mode
         </button>
