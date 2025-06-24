@@ -5,7 +5,8 @@ import MyWorkSkills from "@/components/home/MyWorkSkills";
 import Portfolio from "@/components/home/Portfolio";
 import Services from "@/components/home/Services";
 import WhyHireMe from "@/components/home/WhyHireMe";
-import Image from "next/image";
+
+export const dynamic = 'force-static';
 
 export default function Home() {
   return (
