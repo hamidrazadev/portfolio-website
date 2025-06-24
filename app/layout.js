@@ -4,6 +4,7 @@ import { Providers as ThemeProviderUtil } from "@/utils/ThemeProviderUtil";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -103,9 +104,8 @@ export default function RootLayout({ children }) {
           <main className="">
             {children}
           </main>
-          <footer>
-            <Footer />
-          </footer>
+          <Toaster />
+          <Footer />
         </ThemeProviderUtil>
       </body>
     </html >
