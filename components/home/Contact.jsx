@@ -141,7 +141,7 @@ export default function Contact() {
                     <div className="flex justify-center">
                         <button
                             type="submit"
-                            className="cursor-pointer flex items-center gap-2 bg-primary hover:bg-secondary text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300"
+                            className="cursor-pointer flex items-center gap-2 px-4 py-2 rounded-full bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl"
                         >
                             <span>Get a Quote</span>
                             <FaRegCommentDots className="w-5 h-5" />

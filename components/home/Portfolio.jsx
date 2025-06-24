@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { FaCompass } from 'react-icons/fa6'
-import { FiExternalLink } from 'react-icons/fi'
 import { GiBinoculars } from 'react-icons/gi';
 
 const portfolioData = {
@@ -38,7 +36,7 @@ const portfolioData = {
 
 export default function Portfolio() {
     return (
-        <section id='portfolio' className="py-10 lg:py-20 bg-slate-900">
+        <section id='portfolio' className="py-10 lg:py-20 bg-secondary">
             <div className="container mx-auto px-4">
                 {/* Header Section */}
                 <div className="lg:text-center mb-10 lg:mb-16">
