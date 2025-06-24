@@ -4,6 +4,7 @@ import { Providers as ThemeProviderUtil } from "@/utils/ThemeProviderUtil";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Toaster } from "react-hot-toast";
+import GlobalLoader from '@/components/layout/GlobalLoader';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -92,6 +93,7 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${poppins.className} antialiased`}>
+        <GlobalLoader />
         <ThemeProviderUtil>
           <nav className="flex flex-col items-center sticky top-0 z-50 w-full my-4">
             <Navbar />
