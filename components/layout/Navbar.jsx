@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
-import ThemeToggle from './ThemeToggle';
+// import ThemeToggle from './ThemeToggle';
 import { CgMenu } from "react-icons/cg";
 import SidePanel from './SidePanel';
 
@@ -34,7 +34,7 @@ export default function Navbar() {
     const [isSidePanelOpen, setIsSidePanelOpen] = useState(false);
 
     return (
-        <div className="container mx-auto rounded-full bg-white shadow shadow-slate-50 lg:p-4 flex items-center justify-between lg:h-[80px] h-[60px] p-2">
+        <div className="container mx-auto rounded-full bg-white shadow-md shadow-gray-300 lg:p-4 flex items-center justify-between lg:h-[80px] h-[60px] p-2">
             <Link href={'#top'} className="items-center justify-center flex overflow-clip rounded-full h-12 w-12 lg:h-16 lg:w-16 bg-white shadow shadow-slate-50">
                 <Image src={'/assets/logo.png'} className="rounded-full" width={60} height={60} />
             </Link>

@@ -37,13 +37,11 @@ const footerData = {
 
 export default function Footer() {
     const [deferredPrompt, setDeferredPrompt] = useState(null);
-    const [installable, setInstallable] = useState(false);
 
     useEffect(() => {
         const handler = (e) => {
             e.preventDefault();
             setDeferredPrompt(e);
-            setInstallable(true);
         };
 
         window.addEventListener("beforeinstallprompt", handler);
@@ -59,13 +57,13 @@ export default function Footer() {
     };
 
     return (
-        <footer className="bg-[#0f0f1c] text-white px-4 md:px-16 pt-12 pb-6">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-12 border-b border-gray-700 pb-8 text-center md:text-left">
+        <footer className="bg-[#0f0f1c] text-white px-4 lg:px-16 pt-12 pb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12 border-b border-gray-700 pb-8">
                 {/* Company Info */}
-                <div className="flex flex-col items-center md:items-start gap-4">
+                <div className="flex flex-col items-start gap-4">
                     <div className="flex items-center gap-3">
                         <Image src={footerData.logo} alt="Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover" />
-                        <h2 className="text-2xl font-semibold text-[#fc6847]">{footerData.companyName}</h2>
+                        <h2 className="text-2xl font-semibold text-primary">{footerData.companyName}</h2>
                     </div>
                     <p className="text-gray-300 text-sm leading-relaxed max-w-xs">{footerData.description}</p>
                 </div>
@@ -73,10 +71,10 @@ export default function Footer() {
                 {/* Navigation */}
                 <div>
                     <h3 className="text-lg font-semibold mb-4">Navigation</h3>
-                    <ul className="space-y-2 flex flex-col items-center md:items-start">
+                    <ul className="space-y-2 flex flex-col items-start">
                         {footerData.navigation.map((item, index) => (
                             <li key={index}>
-                                <Link href={item.url} className="flex items-center gap-2 cursor-pointer hover:text-[#fc6847] transition">
+                                <Link href={item.url} className="flex items-center gap-2 cursor-pointer hover:text-primary transition">
                                     <span>&#8250;</span> {item.text}
                                 </Link>
                             </li>
@@ -87,53 +85,49 @@ export default function Footer() {
                 {/* Contact Info */}
                 <div>
                     <h3 className="text-lg font-semibold mb-4">Contact</h3>
-                    <ul className="space-y-2 text-sm text-gray-300 flex flex-col items-center md:items-start">
+                    <ul className="space-y-2 text-sm text-gray-300 flex flex-col items-start">
                         <li>
-                            <Link href={`tel:${footerData.contact.phone}`} className="hover:text-[#fc6847] flex items-center">
-                                <span className="text-[#fc6847] mr-2">&#9742;</span>{footerData.contact.phone}
+                            <Link href={`tel:${footerData.contact.phone}`} className="hover:text-primary flex items-center">
+                                <span className="text-primary mr-2">&#9742;</span>{footerData.contact.phone}
                             </Link>
                         </li>
                         <li>
-                            <Link href={`mailto:${footerData.contact.email}`} className="hover:text-[#fc6847] flex items-center">
-                                <span className="text-[#fc6847] mr-2">&#9993;</span>{footerData.contact.email}
+                            <Link href={`mailto:${footerData.contact.email}`} className="hover:text-primary flex items-center">
+                                <span className="text-primary mr-2">&#9993;</span>{footerData.contact.email}
                             </Link>
                         </li>
                         <li>
-                            <Link href={`https://www.google.com/maps/search/${encodeURIComponent(footerData.contact.location)}`} target="_blank" rel="noopener noreferrer" className="hover:text-[#fc6847] flex items-center">
-                                <span className="text-[#fc6847] mr-2">&#9873;</span>{footerData.contact.location}
+                            <Link href={`https://www.google.com/maps/search/${encodeURIComponent(footerData.contact.location)}`} target="_blank" rel="noopener noreferrer" className="hover:text-primary flex items-center">
+                                <span className="text-primary mr-2">&#9873;</span>{footerData.contact.location}
                             </Link>
                         </li>
                         <li>
-                            <Link href={footerData.contact.website} target="_blank" rel="noopener noreferrer" className="hover:text-[#fc6847] flex items-center">
-                                <span className="text-[#fc6847] mr-2">&#128279;</span>{footerData.contact.website}
+                            <Link href={footerData.contact.website} target="_blank" rel="noopener noreferrer" className="hover:text-primary flex items-center">
+                                <span className="text-primary mr-2">&#128279;</span>{footerData.contact.website}
                             </Link>
                         </li>
                         <li className="flex items-center">
-                            <span className="text-[#fc6847] mr-2">&#9200;</span>{footerData.contact.hours}
+                            <span className="text-primary mr-2">&#9200;</span>{footerData.contact.hours}
                         </li>
                     </ul>
                 </div>
 
                 {/* Install App & Social Links */}
-                <div className="flex flex-col items-center md:items-start gap-4">
-                    <div className="flex flex-col items-center gap-2">
+                <div className="flex flex-col lg:items-start gap-4">
+                    <div className="flex flex-col lg:items-center gap-2">
                         <h3 className="text-lg font-semibold">Install App</h3>
-                        {installable ? (
-                            <button onClick={handleInstallClick} className="cursor-pointer px-4 py-2 rounded-full font-semibold transition-all bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl flex gap-2 items-center">
-                                <FaDownload /> Install App
-                            </button>
-                        ) : (
-                            <span className="text-gray-400 text-sm">App available for installation</span>
-                        )}
+                        <button onClick={handleInstallClick} className="cursor-pointer px-4 py-2 rounded-full font-semibold transition-all bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl inline-flex gap-2 items-center w-fit">
+                            <FaDownload /> Install App
+                        </button>
                     </div>
 
-                    <div className="flex flex-col gap-2 items-center">
+                    <div className="flex flex-col gap-2 lg:items-center">
                         <h4 className="text-lg font-semibold mt-2">Follow Me</h4>
                         <div className="flex gap-4 text-xl">
-                            <Link href={footerData.socialLinks[0].url} target="_blank" rel="noopener noreferrer" className="hover:text-[#fc6847]"><FaFacebookF /></Link>
-                            <Link href={footerData.socialLinks[1].url} target="_blank" rel="noopener noreferrer" className="hover:text-[#fc6847]"><FaXTwitter /></Link>
-                            <Link href={footerData.socialLinks[2].url} target="_blank" rel="noopener noreferrer" className="hover:text-[#fc6847]"><FaLinkedinIn /></Link>
-                            <Link href={footerData.socialLinks[3].url} target="_blank" rel="noopener noreferrer" className="hover:text-[#fc6847]"><FaInstagram /></Link>
+                            <Link href={footerData.socialLinks[0].url} target="_blank" rel="noopener noreferrer" className="hover:text-primary"><FaFacebookF /></Link>
+                            <Link href={footerData.socialLinks[1].url} target="_blank" rel="noopener noreferrer" className="hover:text-primary"><FaXTwitter /></Link>
+                            <Link href={footerData.socialLinks[2].url} target="_blank" rel="noopener noreferrer" className="hover:text-primary"><FaLinkedinIn /></Link>
+                            <Link href={footerData.socialLinks[3].url} target="_blank" rel="noopener noreferrer" className="hover:text-primary"><FaInstagram /></Link>
                         </div>
                     </div>
                 </div>
