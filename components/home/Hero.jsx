@@ -97,8 +97,8 @@ export default function Hero() {
                                 <Link
                                     key={index}
                                     href={button.href}
-                                    className={`px-8 py-4 rounded-full font-semibold transition-all flex items-center ${button.isPrimary
-                                        ? 'bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl'
+                                    className={`px-4 py-2 rounded-full font-semibold transition-all flex items-center ${button.isPrimary
+                                        ? 'bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl'
                                         : 'bg-white/10 hover:bg-primary text-white border border-white/30 backdrop-blur-sm'
                                         }`}
                                 >

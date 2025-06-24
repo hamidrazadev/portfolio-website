@@ -121,7 +121,7 @@ export default function About() {
                                         {aboutData.personalInfo.twitter.label}
                                     </span>
                                     <p className="text-white font-medium">
-                                        <Link  href={`https://twitter.com/${aboutData.personalInfo.twitter.value}`} target="_blank">{aboutData.personalInfo.twitter.value}</Link>
+                                        <Link href={`https://twitter.com/${aboutData.personalInfo.twitter.value}`} target="_blank">{aboutData.personalInfo.twitter.value}</Link>
                                     </p>
                                 </div>
                             </div>
@@ -134,8 +134,8 @@ export default function About() {
                                     key={index}
                                     href={button.href}
                                     target={button.isPrimary ? "_self" : "_blank"}
-                                    className={`inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300 ${button.isPrimary
-                                        ? 'bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl'
+                                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold transition-all duration-300 ${button.isPrimary
+                                        ? 'bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl'
                                         : 'bg-white/10 hover:bg-primary text-white border border-white/30 backdrop-blur-sm'
                                         }`}
                                 >
