@@ -10,48 +10,61 @@
 html {
   @apply scroll-smooth bg-black;
   scrollbar-width: thin;
-  /* For Firefox */
   scrollbar-color: var(--color-primary) var(--color-secondary);
-  /* Thumb: primary, Track: secondary */
 }
 
 /* Webkit-based browsers (Chrome, Safari, Edge) */
-::-webkit-scrollbar {
+/* Main scrollbar container - auto hide trick */
+body::-webkit-scrollbar {
   width: 10px;
-  /* Scrollbar width */
   height: 10px;
-  /* For horizontal scrollbars */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
 }
 
+/* Show scrollbar when hovering over body or scrolling */
+body:hover::-webkit-scrollbar,
+body:active::-webkit-scrollbar {
+  opacity: 1;
+}
+
+/* Optional: show scrollbar when hovering the scrollbar track itself */
+::-webkit-scrollbar:hover {
+  opacity: 1;
+}
+
+/* Scrollbar track */
 ::-webkit-scrollbar-track {
   background: var(--color-secondary);
-  /* Matches #0a0c18 */
   border-radius: 10px;
-  /* Rounded track */
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
-  /* Subtle shadow */
 }
 
+/* Scrollbar thumb (draggable part) */
 ::-webkit-scrollbar-thumb {
   background: var(--color-primary);
-  /* #ff6f49 for thumb */
   border-radius: 10px;
-  /* Rounded thumb */
   border: 2px solid var(--color-secondary);
-  /* Border to blend with track */
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  cursor: grab;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #ff8c66;
-  /* Lighter shade of primary for hover */
   box-shadow: 0 0 10px rgba(255, 111, 73, 0.5);
-  /* Glow effect */
+  transform: scale(1.1); /* Enlarge on hover */
 }
 
 ::-webkit-scrollbar-thumb:active {
   background: #e55a36;
-  /* Darker shade of primary for active */
+  cursor: grabbing;
+  transform: scale(0.95); /* Slight press effect */
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 @theme {
@@ -59,38 +72,14 @@ html {
   --color-secondary: #0a0c18;
 }
 
-#services {
-  @apply scroll-m-[60px] lg:scroll-m-[80px];
-}
-
-#about {
-  @apply scroll-m-[60px] lg:scroll-m-[80px];
-}
-
-#contact {
-  @apply scroll-m-[60px] lg:scroll-m-[80px];
-}
-
-#myworkskills {
-  @apply scroll-m-[60px] lg:scroll-m-[80px];
-}
-
-#portfolio {
-  @apply scroll-m-[60px] lg:scroll-m-[80px];
-}
-
-#whyhireme {
-  @apply scroll-m-[60px] lg:scroll-m-[80px];
-}
-
+#services,
+#about,
+#contact,
+#myworkskills,
+#portfolio,
+#whyhireme,
 #top {
   @apply scroll-m-[60px] lg:scroll-m-[80px];
-}
-
-/* Optional: Hide scrollbar when not needed */
-body:not(:hover)::-webkit-scrollbar {
-  width: 0;
-  height: 0;
 }
 
 /* HTML: <div class="loader"></div> */
@@ -114,10 +103,12 @@ body:not(:hover)::-webkit-scrollbar {
   border-radius: inherit;
   background: currentColor;
   box-shadow: -10px 0 12px 3px currentColor;
-  clip-path: polygon(0 5%, 100% 0,100% 100%,0 95%,-30px 50%);
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%, -30px 50%);
   animation: l14 1s infinite linear;
 }
 
 @keyframes l14 {
-  100% {left: calc(100% + 20px)}
+  100% {
+    left: calc(100% + 20px);
+  }
 }
