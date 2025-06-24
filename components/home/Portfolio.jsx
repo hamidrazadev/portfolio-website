@@ -7,12 +7,12 @@ import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll'
 
 const portfolioData = {
     title: "Look at my Portfolio",
-    description: "These are some of the projects I've worked on in the past. I hope you find them interesting. If you want to see more, feel free to contact me.",
+    description: "I've worked on various projects proudly showcasing skills with considerable creativity across pretty diverse domains and fields of endeavor. Hopefully you discover them thoroughly captivating and pretty insightful meanwhile finding some value within. Feel free reaching out anytime for discussing a project or exploring more of my eclectic body of work pretty thoroughly.",
     skills: [
-        { id: 1, name: "Figma", link: "https://www.example.com", image: "/assets/placeholder.png" },
-        { id: 2, name: "WordPress", link: "https://www.example.com", image: "/assets/placeholder.png" },
-        { id: 3, name: "Web Development", link: "https://www.example.com", image: "/assets/placeholder.png" },
-        { id: 4, name: "Web Design", link: "https://www.example.com", image: "/assets/placeholder.png" }
+        { id: 1, name: "Movie Stack", link: "https://movie-stack-tau.vercel.app/", image: "/assets/Portfolio/MovieStack.png" },
+        { id: 2, name: "News Gen", link: "•https://hamidwebs.github.io/NewsGen/", image: "/assets/Portfolio/NewsGen.png" },
+        { id: 3, name: "Text Utils", link: "https://hamidwebs.github.io/TextUtils/", image: "/assets/Portfolio/TextUtils.png" },
+        { id: 4, name: "Time Remaining in New Year", link: "https://hamidwebs.github.io/Time-Remaining-in-New-Year/", image: "/assets/Portfolio/TimeRemaining.png" }
     ]
 }
 
@@ -41,7 +41,7 @@ export default function Portfolio() {
                             animation="zoom-in-up"
                             delay={0.1 + (index * 0.1)}
                         >
-                            <div className="group rounded-2xl p-6 border border-slate-700/50 hover:border-primary/30 transition-all duration-300 hover:scale-[1.02] h-72 flex items-center justify-center relative overflow-hidden">
+                            <div className="group rounded-2xl p-6 border border-slate-700/50 hover:border-primary/30 transition-all duration-300 hover:scale-[1.02] h-96 flex items-center justify-center relative overflow-hidden">
 
                                 <Image
                                     src={skill.image}

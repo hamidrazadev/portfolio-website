@@ -9,7 +9,7 @@ import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll'
 // Why Hire Me data object
 const whyHireMeData = {
     title: "Why Hire Me?",
-    description: "I am a Full Stack Developer with over 10 years of experience in building scalable web applications. I specialize in creating dynamic and responsive user interfaces, as well as robust backend systems. My passion for coding drives me to continuously learn and adapt to new technologies, ensuring that I deliver high-quality solutions that meet client needs.",
+    description: "I bring unwavering dedication and sheer creativity to every project and infuse it with considerable technical expertise somehow effectively. I strive very hard to exceed expectations with razor-sharp focus on quality and remarkably high client satisfaction under tight deadlines. My knack for cracking tricky problems and conjuring effective fixes makes me pretty darn reliable for your ambitious ventures apparently.",
     image: "/assets/MyPic.png",
     stats: [
         { id: 1, number: "2+", label: "Years of Experience" },

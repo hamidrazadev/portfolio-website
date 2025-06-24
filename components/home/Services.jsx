@@ -8,14 +8,14 @@ import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll'
 // Services data
 const servicesData = {
     title: "My Services",
-    description: "Explore the range of services I offer to help you achieve your goals. From UI/UX design to web development, I provide comprehensive solutions tailored to your needs.",
+    description: "Unleash a kaleidoscope of innovative solutions I furnish, effectively translating your vision into vibrant reality with uncommon creativity. I craft bespoke digital experiences with intuitive UI/UX design and full-stack web development that align pretty closely with your overall vision. I craft exceptionally slick high-quality digital experiences yielding really great results quietly behind scenes with considerable precision.",
     services: [
-        { id: 1, title: "UI/ UX Design", image: "/assets/placeholder.png", href: "https://example.com" },
-        { id: 2, title: "Web Design", image: "/assets/placeholder.png", href: "https://example.com" },
-        { id: 3, title: "Web Development", image: "/assets/placeholder.png", href: "https://example.com" },
-        { id: 4, title: "Web Development", image: "/assets/placeholder.png", href: "https://example.com" },
-        { id: 5, title: "Web Development", image: "/assets/placeholder.png", href: "https://example.com" },
-        { id: 6, title: "Web Development", image: "/assets/placeholder.png", href: "https://example.com" }
+        { id: 1, title: "UI/UX Design", image: "/assets/MyServices/UIUXDesign.png", href: "#contact" },
+        { id: 2, title: "Video Editing", image: "/assets/MyServices/VideoEditing.png", href: "#contact" },
+        { id: 3, title: "Responsive Web Design", image: "/assets/MyServices/ResponsiveWebDesign.png", href: "#contact" },
+        { id: 4, title: "Front-end Web Development", image: "/assets/MyServices/FrontEndWebDevelopment.png", href: "#contact" },
+        { id: 5, title: "Full Stack Web Development", image: "/assets/MyServices/FullStackWebDevelopment.png", href: "#contact" },
+        { id: 6, title: "PWA Development", image: "/assets/MyServices/PWADevelopment.png", href: "#contact" }
     ],
     seeAllButton: {
         text: "See All",
@@ -71,7 +71,6 @@ export default function Services() {
 
                                     {/* Arrow Button */}
                                     <Link
-                                        target="_blank"
                                         href={service.href}
                                         className="absolute bottom-8 right-8 w-12 h-12 bg-primary hover:bg-secondary border border-secondary text-white hover:text-primary hover:border-primary rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
                                     >

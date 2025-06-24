@@ -10,7 +10,7 @@ const heroData = {
     greeting: "Hello!",
     name: "Muhammad Hamid Raza",
     profession: "Full Stack Developer",
-    description: "I am a Full Stack Developer with over 2 years of experience in building scalable web applications. I specialize in creating dynamic and responsive user interfaces, as well as robust backend systems. My passion for coding drives me to continuously learn and adapt to new technologies, ensuring that I deliver high-quality solutions that meet client needs.",
+    description: "I've been building scalable web applications for over 2 years as a Full Stack Developer with considerable expertise. I craft snappy user interfaces with flair and beefy backend systems that work smoothly under pressure most of time. My coding fervor fuels relentless pursuit of novel tech paradigms ensuring high-grade deliverables that satisfy diverse client requirements pretty effectively nowadays.",
     image: "/assets/MyPic.png",
     experience: {
         years: "2+",

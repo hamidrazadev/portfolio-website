@@ -10,7 +10,7 @@ import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll'
 const aboutData = {
     badge: "About Me",
     title: "Muhammad Hamid Raza",
-    description: "I am a Full Stack Developer with a passion for creating dynamic and responsive web applications. I specialize in both front-end and back-end development, ensuring seamless user experiences and robust functionality. My expertise includes HTML, CSS, JavaScript, React, Node.js, and various databases. I thrive on challenges and continuously seek to improve my skills and knowledge in the ever-evolving tech landscape.",
+    description: "I craft pretty slick web applications with a passion for full stack development and a knack for creating razor-sharp user interfaces. I excel in front-end and back-end development possessing strong skills in HTML CSS JavaScript React Node.js and adept database management. I revel in tackling gnarly issues and excel vigorously in environments that are frenetic and replete with obstacles. Eagerly I explore new tech pretty frequently and enhance development skills relentlessly with obsessive fervor nowadays. I aim at crafting super slick digital interactions that pump out tangible worth for end users pretty quickly.",
     image: "/assets/MyPic.png",
     personalInfo: {
         name: {

@@ -1,25 +1,105 @@
-"use client"
-import React from 'react'
-import Image from 'next/image'
-import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll'
+"use client";
 
-// Skills data object
-const skillsData = {
-    title: "My Work Skills",
-    description: "I have a diverse set of skills that I have honed over the years, allowing me to tackle various projects with confidence and creativity. From design to development, I bring a unique blend of expertise to every task.",
-    skills: [
-        { id: 1, name: "Figma", percentage: 99, icon: "/assets/logo.png" },
-        { id: 2, name: "WordPress", percentage: 99, icon: "/assets/logo.png" },
-        { id: 3, name: "Web Development", percentage: 95, icon: "/assets/logo.png" },
-        { id: 4, name: "Web Design", percentage: 97, icon: "/assets/logo.png" },
-        { id: 5, name: "Sketch", percentage: 93, icon: "/assets/logo.png" },
-        { id: 6, name: "Xd", percentage: 99, icon: "/assets/logo.png" },
-        { id: 7, name: "Video Editing", percentage: 94, icon: "/assets/logo.png" },
-        { id: 8, name: "Mobile App", percentage: 90, icon: "/assets/logo.png" }
-    ]
+import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll';
+import { useInView } from 'framer-motion';
+
+// SkillCard Component
+function SkillCard({ skill, index }) {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false });
+
+    const [displayPercentage, setDisplayPercentage] = useState(0);
+
+    useEffect(() => {
+        if (isInView) {
+            let start = 0;
+            const end = skill.percentage;
+            const duration = 1000; // total animation duration in ms
+            const stepTime = Math.abs(Math.floor(duration / end)); // time per step
+
+            let startTime = null;
+
+            const animate = (timestamp) => {
+                if (!startTime) startTime = timestamp;
+                const progress = timestamp - startTime;
+                const current = Math.min(Math.round((progress / duration) * end), end);
+                setDisplayPercentage(current);
+                if (current < end) {
+                    requestAnimationFrame(animate);
+                }
+            };
+
+            requestAnimationFrame(animate);
+        } else {
+            setDisplayPercentage(0); // Optional: Reset on scroll out
+        }
+    }, [isInView, skill.percentage]);
+
+    return (
+        <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-primary/30 transition-all duration-300 hover:scale-105">
+            {/* Icon */}
+            <div className="flex justify-center mb-6">
+                <div className="w-24 h-24 rounded-full flex items-center justify-center">
+                    <Image
+                        src={skill.icon}
+                        alt={skill.name}
+                        width={60}
+                        height={60}
+                        className="w-[60px] h-[60px] object-contain"
+                    />
+                </div>
+            </div>
+
+            {/* Skill Name */}
+            <h3 className="text-xl font-semibold text-white text-center mb-6">
+                {skill.name}
+            </h3>
+
+            {/* Progress Bar */}
+            <div className="space-y-2 relative" ref={ref}>
+                {/* Progress Bar Background */}
+                <div className="w-full bg-slate-700/50 rounded-full h-6 overflow-hidden">
+                    {/* Progress Fill */}
+                    <div
+                        className="h-full bg-gradient-to-l from-primary to-primary/80 rounded-full transition-all duration-1000 ease-in-out"
+                        style={{ width: isInView ? `${skill.percentage}%` : '0%' }}
+                    />
+                </div>
+
+                {/* Percentage Text */}
+                <div className="text-center absolute inset-0 flex items-center justify-center">
+                    <span className="text-white font-bold">
+                        {displayPercentage}%
+                    </span>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default function MyWorkSkills() {
+
+    const skillsData = {
+        title: "My Work Skills",
+        description: "I've cultivated an eclectic array of skills enabling me handle diverse projects with flair and precision under varied circumstances. I fuse technical know-how with innovative problem-solving skills pretty effectively while building robust web apps and creating user-friendly designs. I achieve high-quality results pretty consistently by rapidly adapting and incrementally refining my approach in virtually every task undertaken.",
+        skills: [
+            { id: 1, name: "Adobe Illustrator", percentage: 83, icon: "/assets/MyWorkSkills/AdobeIllustrator.png" },
+            { id: 2, name: "Adobe Photoshop", percentage: 86, icon: "/assets/MyWorkSkills/AdobePhotoshop.png" },
+            { id: 3, name: "Adobe Premiere Pro", percentage: 80, icon: "/assets/MyWorkSkills/AdobePremierePro.png" },
+            { id: 4, name: "HTML", percentage: 94, icon: "/assets/MyWorkSkills/HTML.png" },
+            { id: 5, name: "CSS", percentage: 92, icon: "/assets/MyWorkSkills/CSS.png" },
+            { id: 6, name: "JavaScript", percentage: 89, icon: "/assets/MyWorkSkills/JavaScript.png" },
+            { id: 13, name: "Next JS", percentage: 85, icon: "/assets/MyWorkSkills/NextJS.png" },
+            { id: 12, name: "Tailwind CSS", percentage: 90, icon: "/assets/MyWorkSkills/TailwindCSS.png" },
+            { id: 8, name: "MongoDB", percentage: 80, icon: "/assets/MyWorkSkills/MongoDB.png" },
+            { id: 9, name: "Express JS", percentage: 82, icon: "/assets/MyWorkSkills/ExpressJS.png" },
+            { id: 10, name: "React JS", percentage: 88, icon: "/assets/MyWorkSkills/ReactJS.png" },
+            { id: 11, name: "Node JS", percentage: 83, icon: "/assets/MyWorkSkills/NodeJS.png" },
+        ]
+    }
+
     return (
         <section id='myworkskills' className="py-10 lg:py-20 bg-slate-900">
             <div className="container mx-auto px-4">
@@ -44,46 +124,7 @@ export default function MyWorkSkills() {
                             animation="zoom-in"
                             delay={0.1 + (index * 0.05)} // Quick staggered animation
                         >
-                            <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-primary/30 transition-all duration-300 hover:scale-105">
-                                {/* Icon */}
-                                <div className="flex justify-center mb-6">
-                                    <div className="w-24 h-24 rounded-full flex items-center justify-center">
-                                        <Image
-                                            src={skill.icon}
-                                            alt={skill.name}
-                                            width={60}
-                                            height={60}
-                                            className="w-[60px] h-[60px] object-contain"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Skill Name */}
-                                <h3 className="text-xl font-semibold text-white text-center mb-6">
-                                    {skill.name}
-                                </h3>
-
-                                {/* Progress Bar */}
-                                <div className="space-y-2 relative">
-                                    {/* Progress Bar Background */}
-                                    <div className="w-full bg-slate-700/50 rounded-full h-6 overflow-hidden">
-                                        {/* Progress Fill */}
-                                        <AnimatedOnScroll animation="fade-right" delay={0.2 + (index * 0.05)}>
-                                            <div
-                                                className="h-full bg-gradient-to-l from-primary to-primary/80 rounded-full transition-all"
-                                                style={{ width: `${skill.percentage}%` }}
-                                            />
-                                        </AnimatedOnScroll>
-                                    </div>
-
-                                    {/* Percentage Text */}
-                                    <div className="text-center absolute inset-0 flex items-center justify-center">
-                                        <span className="text-white font-bold">
-                                            {skill.percentage}%
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                            <SkillCard skill={skill} index={index} />
                         </AnimatedOnScroll>
                     ))}
                 </div>

@@ -20,7 +20,7 @@ import { HiOutlineMailOpen } from "react-icons/hi";
 const footerData = {
     logo: "/assets/logo.png",
     companyName: "Muhammad Hamid Raza",
-    description: "A full-stack developer with a passion for creating dynamic and responsive web applications. Specializing in React, Node.js, and modern web technologies.",
+    description: "Thanks for dropping by my pretty snazzy portfolio hopefully you found some rad stuff in there. I'm perpetually receptive to novel ventures and collaborations that spark intense enthusiasm within rather exotic professional circles. I'm always here and happy help bring your concepts alive somehow down line.",
     navigation: [
         { text: "Home", url: "#top" },
         { text: "About", url: "#about" },

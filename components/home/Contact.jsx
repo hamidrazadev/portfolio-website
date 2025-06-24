@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { FaRegCommentDots } from 'react-icons/fa6';
+import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import uploadFile from '@/utils/uploadFile';
 import sendEmail from '@/utils/sendEmail';
 import { toast } from 'react-hot-toast';
@@ -8,16 +9,34 @@ import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll';
 
 const bgImage = "/assets/ContactBackground.jpg";
 
+const services = [
+    { id: 1, title: "UI/UX Design" },
+    { id: 2, title: "Video Editing" },
+    { id: 3, title: "Responsive Web Design" },
+    { id: 4, title: "Front-end Web Development" },
+    { id: 5, title: "Full Stack Web Development" },
+    { id: 6, title: "PWA Development" }
+];
+
 export default function Contact() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: '',
         file: null,
+        service: ''
     });
+
+    const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const handleOnSubmit = async (e) => {
         e.preventDefault();
+
+        // Check if service is selected
+        if (!formData.service) {
+            toast.error('Please select a service.');
+            return;
+        }
 
         toast.promise(
             (async () => {
@@ -32,10 +51,11 @@ export default function Contact() {
                     email: formData.email,
                     message: formData.message,
                     fileUrl,
+                    service: formData.service
                 });
 
                 if (result.status === 200) {
-                    setFormData({ name: '', email: '', message: '', file: null });
+                    setFormData({ name: '', email: '', message: '', file: null, service: '' });
                     e.target.reset();
                     return 'Settings saved!';
                 } else {
@@ -61,6 +81,11 @@ export default function Contact() {
         } else {
             setFormData({ ...formData, [name]: value });
         }
+    };
+
+    const handleServiceSelect = (service) => {
+        setFormData({ ...formData, service });
+        setDropdownOpen(false);
     };
 
     return (
@@ -122,6 +147,36 @@ export default function Contact() {
                                     placeholder="Tell me about your project"
                                     required
                                 ></textarea>
+                            </div>
+                        </AnimatedOnScroll>
+
+                        <AnimatedOnScroll animation="fade-up" delay={0.55}>
+                            <div className="flex flex-col gap-2">
+                                <label className="text-sm font-medium">Select a Service</label>
+                                <div className="relative">
+                                    <button
+                                        type="button"
+                                        onClick={() => setDropdownOpen(!dropdownOpen)}
+                                        className="w-full p-3 bg-gray-700/80 rounded-lg flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-primary"
+                                    >
+                                        <span>{formData.service || 'Choose a service'}</span>
+                                        {dropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
+                                    </button>
+
+                                    {dropdownOpen && (
+                                        <ul className="absolute z-20 mt-2 w-full bg-white text-black rounded-lg shadow-lg max-h-60 overflow-y-auto transition-all">
+                                            {services.map((service) => (
+                                                <li
+                                                    key={service.id}
+                                                    className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-all"
+                                                    onClick={() => handleServiceSelect(service.title)}
+                                                >
+                                                    {service.title}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
                             </div>
                         </AnimatedOnScroll>
 
