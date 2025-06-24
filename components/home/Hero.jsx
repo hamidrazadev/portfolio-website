@@ -39,7 +39,7 @@ const heroData = {
 
 export default function Hero() {
     return (
-        <section id="top" className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 overflow-hidden">
+        <section id="top" className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 overflow-hidden py-10 lg:py-20">
             {/* Decorative Background Elements */}
             <div className="absolute inset-0">
                 {heroData.decorativeElements.map((element, index) => (

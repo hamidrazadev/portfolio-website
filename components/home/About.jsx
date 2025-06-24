@@ -8,8 +8,8 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 // About data in JSON format
 const aboutData = {
     badge: "About Me",
-    title: "Get a website that will make a lasting impression on your audience!!!",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    title: "Muhammad Hamid Raza",
+    description: "I am a Full Stack Developer with a passion for creating dynamic and responsive web applications. I specialize in both front-end and back-end development, ensuring seamless user experiences and robust functionality. My expertise includes HTML, CSS, JavaScript, React, Node.js, and various databases. I thrive on challenges and continuously seek to improve my skills and knowledge in the ever-evolving tech landscape.",
     image: "/assets/MyPic.png",
     personalInfo: {
         name: {
@@ -46,7 +46,7 @@ const aboutData = {
 
 export default function About() {
     return (
-        <section id="about" className="py-20 bg-slate-950 overflow-hidden">
+        <section id="about" className="py-10 lg:py-20 bg-slate-950 overflow-hidden">
             <div className="container mx-auto px-4">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
 

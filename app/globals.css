@@ -7,6 +7,10 @@
   @apply transition-all scroll-smooth;
 }
 
+html {
+  @apply scroll-smooth bg-black;
+}
+
 @theme {
   --color-primary: #ff6f49;
   --color-secondary: #0a0c18;
