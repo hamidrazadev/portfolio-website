@@ -13,7 +13,7 @@ const servicesData = {
         { id: 1, title: "UI/UX Design", image: "/assets/MyServices/UIUXDesign.png", href: "#contact" },
         { id: 2, title: "Video Editing", image: "/assets/MyServices/VideoEditing.png", href: "#contact" },
         { id: 3, title: "Responsive Web Design", image: "/assets/MyServices/ResponsiveWebDesign.png", href: "#contact" },
-        { id: 4, title: "Front-end Web Development", image: "/assets/MyServices/FrontEndWebDevelopment.png", href: "#contact" },
+        { id: 4, title: "Front-end Web Development", image: "/assets/MyServices/FrontendWebDevelopment.png", href: "#contact" },
         { id: 5, title: "Full Stack Web Development", image: "/assets/MyServices/FullStackWebDevelopment.png", href: "#contact" },
         { id: 6, title: "PWA Development", image: "/assets/MyServices/PWADevelopment.png", href: "#contact" }
     ],
