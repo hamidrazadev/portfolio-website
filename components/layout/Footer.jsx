@@ -2,7 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram, FaDownload } from "react-icons/fa6";
+import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram, FaDownload, FaPhone, FaGlobe, FaLocationDot, FaBusinessTime } from "react-icons/fa6";
+import { HiOutlineMailOpen } from "react-icons/hi";
 
 const footerData = {
     logo: "/assets/logo.png",
@@ -88,26 +89,41 @@ export default function Footer() {
                     <ul className="space-y-2 text-sm text-gray-300 flex flex-col items-start">
                         <li>
                             <Link href={`tel:${footerData.contact.phone}`} className="hover:text-primary flex items-center">
-                                <span className="text-primary mr-2">&#9742;</span>{footerData.contact.phone}
+                                <span className="mr-2">
+                                    <FaPhone />
+                                </span>
+                                {footerData.contact.phone}
                             </Link>
                         </li>
                         <li>
                             <Link href={`mailto:${footerData.contact.email}`} className="hover:text-primary flex items-center">
-                                <span className="text-primary mr-2">&#9993;</span>{footerData.contact.email}
+                                <span className="mr-2">
+                                    <HiOutlineMailOpen />
+                                </span>
+                                {footerData.contact.email}
                             </Link>
                         </li>
                         <li>
                             <Link href={`https://www.google.com/maps/search/${encodeURIComponent(footerData.contact.location)}`} target="_blank" rel="noopener noreferrer" className="hover:text-primary flex items-center">
-                                <span className="text-primary mr-2">&#9873;</span>{footerData.contact.location}
+                                <span className="mr-2">
+                                    <FaLocationDot />
+                                </span>
+                                {footerData.contact.location}
                             </Link>
                         </li>
                         <li>
                             <Link href={footerData.contact.website} target="_blank" rel="noopener noreferrer" className="hover:text-primary flex items-center">
-                                <span className="text-primary mr-2">&#128279;</span>{footerData.contact.website}
+                                <span className="mr-2">
+                                    <FaGlobe />
+                                </span>
+                                {footerData.contact.website}
                             </Link>
                         </li>
                         <li className="flex items-center">
-                            <span className="text-primary mr-2">&#9200;</span>{footerData.contact.hours}
+                            <span className="mr-2">
+                                <FaBusinessTime />
+                            </span>
+                            {footerData.contact.hours}
                         </li>
                     </ul>
                 </div>
