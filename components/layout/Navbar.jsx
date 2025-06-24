@@ -48,9 +48,9 @@ export default function Navbar() {
                 }
             </div>
             <div className="flex items-center gap-2">
-                <div className="lg:flex hidden items-center justify-center">
+                {/* <div className="lg:flex hidden items-center justify-center">
                     <ThemeToggle />
-                </div>
+                </div> */}
                 <Link href={'#contact'} className="sm:flex hidden items-center gap-2 px-4 py-2 bg-primary hover:bg-white border hover:border-primary border-white text-white hover:text-primary rounded-full transition-all">
                     <p>Let's Talk</p>
                     <FaArrowUpRightFromSquare />

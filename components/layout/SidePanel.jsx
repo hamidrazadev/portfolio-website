@@ -75,10 +75,10 @@ export default function SidePanel({ isOpen, onClose }) {
                     {/* Footer Actions */}
                     <div className="p-6 border-t border-gray-100 space-y-4">
                         {/* Theme Toggle */}
-                        <div className="flex items-center justify-between">
+                        {/* <div className="flex items-center justify-between">
                             <span className="text-secondary font-medium">Theme</span>
                             <ThemeToggle />
-                        </div>
+                        </div> */}
 
                         {/* Let's Talk Button */}
                         <Link
