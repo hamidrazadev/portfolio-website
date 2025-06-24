@@ -35,8 +35,8 @@ export default function Navbar() {
 
     return (
         <div className="container mx-auto rounded-full bg-white shadow shadow-slate-50 lg:p-4 flex items-center justify-between lg:h-[80px] h-[60px] p-2">
-            <Link href={'#top'} className="items-center justify-center flex">
-                <Image src={'/assets/logo.png'} width={150} height={150} />
+            <Link href={'#top'} className="items-center justify-center flex overflow-clip rounded-full h-12 w-12 lg:h-16 lg:w-16 bg-white shadow shadow-slate-50">
+                <Image src={'/assets/logo.png'} className="rounded-full" width={60} height={60} />
             </Link>
             <div className="items-center gap-6 lg:flex hidden text-lg">
                 {

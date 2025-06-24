@@ -39,7 +39,7 @@ const heroData = {
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 overflow-hidden">
+        <section id="top" className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 overflow-hidden">
             {/* Decorative Background Elements */}
             <div className="absolute inset-0">
                 {heroData.decorativeElements.map((element, index) => (
@@ -116,7 +116,7 @@ export default function Hero() {
                     {/* Right Content - Image */}
                     <div className="relative flex justify-center lg:justify-end">
                         {/* Experience Badge */}
-                        <div className="absolute top-0 right-0 z-20 bg-white/10 backdrop-blur-sm rounded-2xl p-3 lg:p-4 border border-white/20">
+                        {/* <div className="absolute top-0 right-0 z-20 bg-white/10 backdrop-blur-sm rounded-2xl p-3 lg:p-4 border border-white/20">
                             <div className="flex items-center gap-1 mb-1">
                                 {[...Array(5)].map((_, i) => (
                                     <span key={i} className="text-orange-400 text-xs lg:text-sm">⭐</span>
@@ -124,7 +124,7 @@ export default function Hero() {
                             </div>
                             <div className="text-white font-bold text-sm lg:text-lg">{heroData.experience.years}</div>
                             <div className="text-white/80 text-xs lg:text-sm">{heroData.experience.label}</div>
-                        </div>
+                        </div> */}
 
                         {/* Main Image Container */}
                         <div className="relative">
