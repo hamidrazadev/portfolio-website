@@ -58,7 +58,7 @@
             "name": "Contact",
             "short_name": "Contact",
             "description": "Get in touch with Muhammad Hamza Raza",
-            "url": "#contact",
+            "url": "/#contact",
             "icons": [
                 {
                     "src": "/assets/logo-192x192.png",
@@ -70,7 +70,7 @@
             "name": "Portfolio",
             "short_name": "Portfolio",
             "description": "View the portfolio of Muhammad Hamza Raza",
-            "url": "#portfolio",
+            "url": "/#portfolio",
             "icons": [
                 {
                     "src": "/assets/logo-192x192.png",
