@@ -91,7 +91,7 @@ export default function Footer() {
         <footer className="bg-[#0f0f1c] text-white px-4 lg:px-16 pt-12 pb-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12 border-b border-gray-700 pb-8">
                 {/* Company Info */}
-                <AnimatedOnScroll animation="fade-right" delay={0.1}>
+                <AnimatedOnScroll animation="fade-down" delay={0.1}>
                     <div className="flex flex-col items-start gap-4">
                         <div className="flex items-center gap-3">
                             <Image src={footerData.logo} alt="Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover" />
@@ -109,7 +109,7 @@ export default function Footer() {
                             {footerData.navigation.map((item, index) => (
                                 <li key={index}>
                                     <Link href={item.url} className="flex items-center gap-2 cursor-pointer hover:text-primary transition">
-                                        <span>&#8250;</span> {item.text}
+                                        <span className="text-xl">&#8250;</span> {item.text}
                                     </Link>
                                 </li>
                             ))}
@@ -154,7 +154,7 @@ export default function Footer() {
                     <div className="flex flex-col lg:items-start gap-4">
                         <div className="flex flex-col lg:items-center gap-2">
                             <h3 className="text-lg font-semibold">Install App</h3>
-                            {!isAppInstalled  && (
+                            {!isAppInstalled && (
                                 <button
                                     onClick={handleInstallClick}
                                     className="cursor-pointer px-4 py-2 rounded-full font-semibold transition-transform transform hover:scale-105 bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl inline-flex gap-2 items-center w-fit"

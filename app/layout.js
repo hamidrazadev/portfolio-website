@@ -1,20 +1,15 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from 'next/font/google'
 import "./globals.css";
 import { Providers as ThemeProviderUtil } from "@/utils/ThemeProviderUtil";
-import ThemeToggle from "@/components/layout/ThemeToggle";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Toaster } from "react-hot-toast";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins'
+})
 
 export const metadata = {
   title: "MHR Portfolio | Muhammad Hamza Raza Portfolio Website",
@@ -96,7 +91,7 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content="MHR Portfolio" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${poppins.className} antialiased`}>
         <ThemeProviderUtil>
           <nav className="flex flex-col items-center sticky top-0 z-50 w-full my-4">
             <Navbar />
