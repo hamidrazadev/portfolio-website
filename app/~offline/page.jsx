@@ -24,17 +24,17 @@ const links = [
 
 export const metadata = {
     title: "Offline | No Internet Connection",
-    description: "You are currently offline. Please check your internet connection to view Muhammad Hamza Raza's portfolio website.",
+    description: "You are currently offline. Please check your internet connection to view Muhammad Hamid Raza's portfolio website.",
     keywords: [
         "Offline Page",
         "No Internet",
         "Connection Error",
         "MHR Portfolio",
-        "Muhammad Hamza Raza"
+        "Muhammad Hamid Raza"
     ],
-    authors: [{ name: "Muhammad Hamza Raza", url: process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app" }],
-    creator: "Muhammad Hamza Raza",
-    publisher: "Muhammad Hamza Raza",
+    authors: [{ name: "Muhammad Hamid Raza", url: process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app" }],
+    creator: "Muhammad Hamid Raza",
+    publisher: "Muhammad Hamid Raza",
     generator: "Next.js",
     applicationName: "MHR Portfolio",
     referrer: "origin-when-cross-origin",
@@ -44,7 +44,7 @@ export const metadata = {
     },
     openGraph: {
         title: "Offline | No Internet Connection",
-        description: "You are currently offline. Please check your internet connection to view Muhammad Hamza Raza's portfolio website.",
+        description: "You are currently offline. Please check your internet connection to view Muhammad Hamid Raza's portfolio website.",
         url: process.env.NEXT_PUBLIC_WEBSITE_URL + "/offline" || "https://hamidrazadev.vercel.app/offline",
         siteName: "MHR Portfolio",
         images: [
@@ -61,7 +61,7 @@ export const metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Offline | No Internet Connection",
-        description: "You are currently offline. Please check your internet connection to view Muhammad Hamza Raza's portfolio website.",
+        description: "You are currently offline. Please check your internet connection to view Muhammad Hamid Raza's portfolio website.",
         site: "@HamidRaza_Dev",
         creator: "@HamidRaza_Dev",
         images: [(process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app") + "/assets/logo-512x512.png"]
@@ -69,7 +69,7 @@ export const metadata = {
     category: "Error",
     archives: [],
     other: {
-        "copyright": "© 2025 Muhammad Hamza Raza. All rights reserved.",
+        "copyright": "© 2025 Muhammad Hamid Raza. All rights reserved.",
         "content-type": "website",
         "rating": "general"
     }
