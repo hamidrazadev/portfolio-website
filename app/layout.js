@@ -13,85 +13,61 @@ const poppins = Poppins({
   variable: '--font-poppins'
 })
 
-export const metadata = {
-  title: "MHR Portfolio | Muhammad Hamza Raza Portfolio Website",
-  description: "Muhammad Hamza Raza's personal portfolio website showcasing his skills, projects, and experience in web development.",
-  keywords: [
-    "Muhammad Hamza Raza",
-    "Hamza Raza Portfolio",
-    "Web Developer Portfolio",
-    "Frontend Developer",
-    "Backend Developer",
-    "Full Stack Developer",
-    "MHR Portfolio"
-  ],
-  authors: [{ name: "Muhammad Hamza Raza", url: process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app" }],
-  creator: "Muhammad Hamza Raza",
-  publisher: "Muhammad Hamza Raza",
-  generator: "Next.js",
-  applicationName: "MHR Portfolio",
-  referrer: "origin-when-cross-origin",
-  robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app"),
-  alternates: {
-    canonical: process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app",
-    languages: {
-      "en-US": process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app/en-US",
-      "ur-PK": process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app/ur-PK"
-    }
-  },
-  openGraph: {
-    title: "MHR Portfolio | Muhammad Hamza Raza Portfolio Website",
-    description: "Muhammad Hamza Raza's personal portfolio website showcasing his skills, projects, and experience in web development.",
-    url: process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app",
-    siteName: "MHR Portfolio",
-    images: [
-      {
-        url: (process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app") + "/assets/logo-512x512.png",
-        width: 512,
-        height: 512,
-        alt: "Muhammad Hamza Raza Portfolio Preview"
-      }
-    ],
-    locale: "en_US",
-    type: "website"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "MHR Portfolio | Muhammad Hamza Raza Portfolio Website",
-    description: "Muhammad Hamza Raza's personal portfolio website showcasing his skills, projects, and experience in web development.",
-    site: "@HamidRaza_Dev",
-    creator: "@HamidRaza_Dev",
-    images: [(process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app") + "/assets/logo-512x512.png",]
-  },
-  category: "Portfolio",
-  archives: [],
-  other: {
-    "copyright": "© 2025 Muhammad Hamza Raza. All rights reserved.",
-    "content-type": "website",
-    "rating": "general"
-  }
-};
-
-export const viewport = {
-  width: "device-width",
-  initialScale: 1.0,
-  maximumScale: 1.0,
-  userScalable: "no",
-  themeColor: "#ffffff",
-  colorScheme: "dark"
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Favicon */}
         <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="MHR Portfolio" />
         <link rel="manifest" href="/manifest.json" />
+
+        {/* Viewport and Theme */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="color-scheme" content="dark" />
+
+        {/* Preconnect for Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* SEO JSON-LD Structured Data */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Muhammad Hamza Raza",
+            "url": "https://hamidrazadev.vercel.app",
+            "image": "https://hamidrazadev.vercel.app/assets/logo-512x512.png",
+            "sameAs": [
+              "https://twitter.com/@HamidRaza_Dev",
+              "https://www.linkedin.com/in/hamidrazadev",
+              "https://github.com/hamidrazadev",
+              "https://www.facebook.com/hamidraza.dev/",
+              "https://www.instagram.com/hamidraza.dev/"
+            ],
+            "jobTitle": "Full Stack Developer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "MHR Portfolio"
+            },
+            "description": "Muhammad Hamza Raza's personal portfolio website showcasing his skills, projects, and experience in web development.",
+            "knowsAbout": [
+              "Frontend Development",
+              "Backend Development",
+              "Full Stack Development",
+              "Web Development",
+              "React.js",
+              "Next.js",
+              "Node.js",
+              "MongoDB"
+            ],
+            "keywords": "Muhammad Hamza Raza, Hamza Raza Portfolio, Web Developer Portfolio, Frontend Developer, Backend Developer, Full Stack Developer, MHR Portfolio"
+          })
+        }} />
       </head>
       <body className={`${poppins.className} antialiased`}>
         <GlobalLoader />
@@ -107,6 +83,6 @@ export default function RootLayout({ children }) {
           <Footer />
         </ThemeProviderUtil>
       </body>
-    </html >
+    </html>
   );
 }

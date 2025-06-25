@@ -30,24 +30,24 @@ export const metadata = {
         "MHR Portfolio",
         "Muhammad Hamza Raza"
     ],
-    authors: [{ name: "Muhammad Hamza Raza", url: process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app" }],
+    authors: [{ name: "Muhammad Hamza Raza", url: process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app" }],
     creator: "Muhammad Hamza Raza",
     publisher: "Muhammad Hamza Raza",
     generator: "Next.js",
     applicationName: "MHR Portfolio",
     referrer: "origin-when-cross-origin",
-    metadataBase: new URL(process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app"),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app"),
     alternates: {
-        canonical: process.env.NEXT_PUBLIC_WEBSITE_URL + "/not-found" || "https://mhr-portfolio-five.vercel.app/not-found"
+        canonical: process.env.NEXT_PUBLIC_WEBSITE_URL + "/not-found" || "https://hamidrazadev.vercel.app/not-found"
     },
     openGraph: {
         title: "404 | Page Not Found",
         description: "The page you are looking for does not exist on Muhammad Hamza Raza's portfolio website.",
-        url: process.env.NEXT_PUBLIC_WEBSITE_URL + "/not-found" || "https://mhr-portfolio-five.vercel.app/not-found",
+        url: process.env.NEXT_PUBLIC_WEBSITE_URL + "/not-found" || "https://hamidrazadev.vercel.app/not-found",
         siteName: "MHR Portfolio",
         images: [
             {
-                url: (process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app") + "/assets/logo-512x512.png",
+                url: (process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app") + "/assets/logo-512x512.png",
                 width: 512,
                 height: 512,
                 alt: "404 Page Not Found"
@@ -62,7 +62,7 @@ export const metadata = {
         description: "The page you are looking for does not exist on Muhammad Hamza Raza's portfolio website.",
         site: "@HamidRaza_Dev",
         creator: "@HamidRaza_Dev",
-        images: [(process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app") + "/assets/logo-512x512.png"]
+        images: [(process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app") + "/assets/logo-512x512.png"]
     },
     category: "Error",
     archives: [],

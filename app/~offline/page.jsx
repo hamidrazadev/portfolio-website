@@ -32,24 +32,24 @@ export const metadata = {
         "MHR Portfolio",
         "Muhammad Hamza Raza"
     ],
-    authors: [{ name: "Muhammad Hamza Raza", url: process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app" }],
+    authors: [{ name: "Muhammad Hamza Raza", url: process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app" }],
     creator: "Muhammad Hamza Raza",
     publisher: "Muhammad Hamza Raza",
     generator: "Next.js",
     applicationName: "MHR Portfolio",
     referrer: "origin-when-cross-origin",
-    metadataBase: new URL(process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app"),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app"),
     alternates: {
-        canonical: process.env.NEXT_PUBLIC_WEBSITE_URL + "/offline" || "https://mhr-portfolio-five.vercel.app/offline"
+        canonical: process.env.NEXT_PUBLIC_WEBSITE_URL + "/offline" || "https://hamidrazadev.vercel.app/offline"
     },
     openGraph: {
         title: "Offline | No Internet Connection",
         description: "You are currently offline. Please check your internet connection to view Muhammad Hamza Raza's portfolio website.",
-        url: process.env.NEXT_PUBLIC_WEBSITE_URL + "/offline" || "https://mhr-portfolio-five.vercel.app/offline",
+        url: process.env.NEXT_PUBLIC_WEBSITE_URL + "/offline" || "https://hamidrazadev.vercel.app/offline",
         siteName: "MHR Portfolio",
         images: [
             {
-                url: (process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app") + "/assets/logo-512x512.png",
+                url: (process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app") + "/assets/logo-512x512.png",
                 width: 512,
                 height: 512,
                 alt: "Offline - No Internet Connection"
@@ -64,7 +64,7 @@ export const metadata = {
         description: "You are currently offline. Please check your internet connection to view Muhammad Hamza Raza's portfolio website.",
         site: "@HamidRaza_Dev",
         creator: "@HamidRaza_Dev",
-        images: [(process.env.NEXT_PUBLIC_WEBSITE_URL || "https://mhr-portfolio-five.vercel.app") + "/assets/logo-512x512.png"]
+        images: [(process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app") + "/assets/logo-512x512.png"]
     },
     category: "Error",
     archives: [],

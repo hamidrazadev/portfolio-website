@@ -37,11 +37,11 @@ const footerData = {
         hours: "Mon - Fri / 8am - 10pm"
     },
     socialLinks: [
-        { url: "https://github.com/hamidrazadev", label: "GitHub"},
-        { url: "https://www.linkedin.com/in/hamid-raza786", label: "LinkedIn" },
+        { url: "https://github.com/hamidrazadev", label: "GitHub" },
+        { url: "https://www.linkedin.com/in/hamidrazadev", label: "LinkedIn" },
         { url: "https://x.com/@HamidRaza_Dev", label: "Twitter" },
         { url: "https://www.instagram.com/hamidraza.dev", label: "Instagram" },
-        { url: "https://www.facebook.com/profile.php?id=61560391502253", label: "Facebook" },
+        { url: "https://www.facebook.com/hamidraza.dev/", label: "Facebook" },
     ],
     copyright:
         "Copyright © 2025 Muhammad Hamid Raza. All Rights Reserved.",
