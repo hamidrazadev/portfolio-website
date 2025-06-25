@@ -17,6 +17,27 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Basic SEO */}
+        <title>MHR Portfolio - Muhammad Hamza Raza</title>
+        <meta name="description" content="Muhammad Hamza Raza's personal portfolio website showcasing his skills, projects, and experience in web development." />
+        <meta name="keywords" content="Muhammad Hamza Raza, Hamza Raza Portfolio, Web Developer Portfolio, Frontend Developer, Backend Developer, Full Stack Developer, MHR Portfolio" />
+        <meta name="author" content="Muhammad Hamza Raza" />
+        <link rel="canonical" href="https://hamidrazadev.vercel.app" />
+
+        {/* Open Graph for Social Sharing */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hamidrazadev.vercel.app" />
+        <meta property="og:title" content="MHR Portfolio - Muhammad Hamza Raza" />
+        <meta property="og:description" content="Muhammad Hamza Raza's personal portfolio showcasing his skills, projects, and experience in web development." />
+        <meta property="og:image" content="https://hamidrazadev.vercel.app/assets/logo-512x512.png" />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@HamidRaza_Dev" />
+        <meta name="twitter:title" content="MHR Portfolio - Muhammad Hamza Raza" />
+        <meta name="twitter:description" content="Muhammad Hamza Raza's personal portfolio showcasing his skills, projects, and experience in web development." />
+        <meta name="twitter:image" content="https://hamidrazadev.vercel.app/assets/logo-512x512.png" />
+
         {/* Favicon */}
         <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
@@ -84,5 +105,5 @@ export default function RootLayout({ children }) {
         </ThemeProviderUtil>
       </body>
     </html>
-  );
+  )
 }

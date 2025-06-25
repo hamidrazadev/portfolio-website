@@ -76,7 +76,7 @@ export default function Hero() {
                                     </div>
                                     {/* Decorative arrow */}
                                     <div className="absolute -top-2 -right-2 text-primary text-2xl rotate-12">
-                                        <Image src='/assets/HeroTextUpper.png' width={20} height={20} />
+                                        <Image src='/assets/HeroTextUpper.png' width={20} height={20} alt="Decorative Arrow" />
                                     </div>
                                 </div>
                             </AnimatedOnScroll>

@@ -98,9 +98,9 @@ export default function Contact() {
 
             <AnimatedOnScroll animation="zoom-in" delay={0.1}>
                 <div className="relative z-10 w-full max-w-3xl bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg text-white">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
                         Let&apos;s make your brand brilliant!
-                    </h1>
+                    </h2>
 
                     <form onSubmit={handleOnSubmit} className="space-y-6">
                         <AnimatedOnScroll animation="fade-up" delay={0.2}>

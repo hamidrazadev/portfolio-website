@@ -97,7 +97,7 @@ export default function Footer() {
                     <div className="flex flex-col items-start gap-4">
                         <div className="flex items-center gap-3">
                             <Image src={footerData.logo} alt="Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover" />
-                            <h2 className="text-2xl font-semibold text-primary">{footerData.companyName}</h2>
+                            <h3 className="text-2xl font-semibold text-primary">{footerData.companyName}</h3>
                         </div>
                         <p className="text-gray-300 text-sm leading-relaxed max-w-xs">{footerData.description}</p>
                     </div>

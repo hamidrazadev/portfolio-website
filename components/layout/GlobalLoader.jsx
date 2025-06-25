@@ -40,7 +40,7 @@ export default function GlobalLoader() {
             className={`fixed inset-0 z-[9999] flex flex-col gap-5 items-center text-center justify-center bg-white dark:bg-black transition-opacity duration-500 ease-in-out ${isLoading ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
         >
             <div className="loader"></div>
-            <h1 className="sm:text-5xl text-3xl font-semibold animate-pulse duration-150">Getting Your Content Ready...</h1>
+            <h2 className="sm:text-5xl text-3xl font-semibold animate-pulse duration-150">Getting Your Content Ready...</h2>
         </div>
     );
 }
