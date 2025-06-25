@@ -13,7 +13,8 @@ import {
     FaPhone,
     FaGlobe,
     FaLocationDot,
-    FaBusinessTime
+    FaBusinessTime,
+    FaGithub
 } from "react-icons/fa6";
 import { HiOutlineMailOpen } from "react-icons/hi";
 
@@ -36,10 +37,11 @@ const footerData = {
         hours: "Mon - Fri / 8am - 10pm"
     },
     socialLinks: [
-        { url: "https://www.facebook.com/profile.php?id=61560391502253", label: "Facebook" },
-        { url: "https://x.com/@HamidRaza_Dev", label: "Twitter" },
+        { url: "https://github.com/hamidrazadev", label: "GitHub"},
         { url: "https://www.linkedin.com/in/hamid-raza786", label: "LinkedIn" },
+        { url: "https://x.com/@HamidRaza_Dev", label: "Twitter" },
         { url: "https://www.instagram.com/hamidraza.dev", label: "Instagram" },
+        { url: "https://www.facebook.com/profile.php?id=61560391502253", label: "Facebook" },
     ],
     copyright:
         "Copyright © 2025 Muhammad Hamid Raza. All Rights Reserved.",
@@ -139,7 +141,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link href={footerData.contact.website} target="_blank" rel="noopener noreferrer" className="hover:text-primary flex items-center">
-                                    <span className="mr-2"><FaGlobe /></span> {footerData.contact.website}
+                                    <span className="mr-2"><FaGlobe /></span> Visit Website
                                 </Link>
                             </li>
                             <li className="flex items-center">
@@ -179,10 +181,11 @@ export default function Footer() {
                                         title={item.label}
                                         className="hover:text-primary transition-transform transform hover:scale-110"
                                     >
-                                        {index === 0 && <FaFacebookF />}
-                                        {index === 1 && <FaXTwitter />}
-                                        {index === 2 && <FaLinkedinIn />}
+                                        {index === 0 && <FaGithub />}
+                                        {index === 1 && <FaLinkedinIn />}
+                                        {index === 2 && <FaXTwitter />}
                                         {index === 3 && <FaInstagram />}
+                                        {index === 4 && <FaFacebookF />}
                                     </Link>
                                 ))}
                             </div>

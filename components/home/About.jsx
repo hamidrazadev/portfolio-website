@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaDownload } from 'react-icons/fa6'
+import { FaDownload, FaEnvelope } from 'react-icons/fa6'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll'
 
@@ -156,7 +156,7 @@ export default function About() {
                                             <span>{button.text}</span>
                                             {
                                                 button.isPrimary &&
-                                                <MdOutlineKeyboardArrowRight className="w-8 h-8" />
+                                                <FaEnvelope className="w-4 h-4" />
                                             }
                                             {
                                                 button.hasIcon && !button.isPrimary && (

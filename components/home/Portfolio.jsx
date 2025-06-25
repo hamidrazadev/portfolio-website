@@ -10,9 +10,9 @@ const portfolioData = {
     description: "I've worked on various projects proudly showcasing skills with considerable creativity across pretty diverse domains and fields of endeavor. Hopefully you discover them thoroughly captivating and pretty insightful meanwhile finding some value within. Feel free reaching out anytime for discussing a project or exploring more of my eclectic body of work pretty thoroughly.",
     skills: [
         { id: 1, name: "Movie Stack", link: "https://movie-stack-tau.vercel.app/", image: "/assets/Portfolio/MovieStack.png" },
-        { id: 2, name: "News Gen", link: "•https://hamidwebs.github.io/NewsGen/", image: "/assets/Portfolio/NewsGen.png" },
-        { id: 3, name: "Text Utils", link: "https://hamidwebs.github.io/TextUtils/", image: "/assets/Portfolio/TextUtils.png" },
-        { id: 4, name: "Time Remaining in New Year", link: "https://hamidwebs.github.io/Time-Remaining-in-New-Year/", image: "/assets/Portfolio/TimeRemaining.png" }
+        { id: 2, name: "News Gen", link: "https://hamidrazadev.github.io/NewsGen/", image: "/assets/Portfolio/NewsGen.png" },
+        { id: 3, name: "Text Utils", link: "https://hamidrazadev.github.io/TextUtils/", image: "/assets/Portfolio/TextUtils.png" },
+        { id: 4, name: "Time Remaining in New Year", link: "https://hamidrazadev.github.io/Time-Remaining-in-New-Year/", image: "/assets/Portfolio/TimeRemaining.png" }
     ]
 }
 

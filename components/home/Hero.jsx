@@ -2,8 +2,9 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaArrowUpRightFromSquare } from 'react-icons/fa6'
+import { FaArrowUpRightFromSquare, FaFolderOpen } from 'react-icons/fa6'
 import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll'
+import { MdWork } from 'react-icons/md'
 
 // Hero data in JSON format
 const heroData = {
@@ -113,9 +114,13 @@ export default function Hero() {
                                         >
                                             {button.text}
                                             {
-                                                button.isPrimary && <span className="ml-2">
-                                                    <FaArrowUpRightFromSquare />
-                                                </span>
+                                                button.isPrimary ?
+                                                    <span className="ml-2">
+                                                        <FaFolderOpen />
+                                                    </span> :
+                                                    <span className="ml-2">
+                                                        <MdWork />
+                                                    </span>
                                             }
                                         </Link>
                                     ))}

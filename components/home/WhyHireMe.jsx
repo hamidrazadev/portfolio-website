@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { MdWork } from 'react-icons/md'
 import { IoIosArrowDown } from "react-icons/io"
 import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll'
+import { FaFolderOpen } from 'react-icons/fa6'
 
 // Why Hire Me data object
 const whyHireMeData = {
@@ -88,7 +89,7 @@ export default function WhyHireMe() {
                                             {button.isPrimary ? (
                                                 <MdWork className="w-4 h-4" />
                                             ) : (
-                                                <IoIosArrowDown className="w-4 h-4" />
+                                                <FaFolderOpen className="w-4 h-4" />
                                             )}
                                         </Link>
                                     ))}

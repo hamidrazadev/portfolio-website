@@ -2,8 +2,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaArrowUpRightFromSquare } from 'react-icons/fa6'
 import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll'
+import { FaEye } from 'react-icons/fa6'
 
 // Services data
 const servicesData = {
@@ -74,7 +74,7 @@ export default function Services() {
                                         href={service.href}
                                         className="absolute bottom-8 right-8 w-12 h-12 bg-primary hover:bg-secondary border border-secondary text-white hover:text-primary hover:border-primary rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
                                     >
-                                        <FaArrowUpRightFromSquare className="w-5 h-5" />
+                                        <FaEye className="w-5 h-5" />
                                     </Link>
                                 </div>
                             </div>
