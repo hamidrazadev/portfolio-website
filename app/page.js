@@ -30,10 +30,6 @@ export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app"),
   alternates: {
     canonical: process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app",
-    languages: {
-      "en-US": process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app/en-US",
-      "ur-PK": process.env.NEXT_PUBLIC_WEBSITE_URL || "https://hamidrazadev.vercel.app/ur-PK"
-    }
   },
   openGraph: {
     title: "MHR Portfolio | Muhammad Hamza Raza Portfolio Website",

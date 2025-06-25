@@ -31,13 +31,6 @@ export default function RootLayout({ children }) {
         <meta property="og:description" content="Muhammad Hamza Raza's personal portfolio showcasing his skills, projects, and experience in web development." />
         <meta property="og:image" content="https://hamidrazadev.vercel.app/assets/logo-512x512.png" />
 
-        {/* Twitter Cards */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@HamidRaza_Dev" />
-        <meta name="twitter:title" content="MHR Portfolio - Muhammad Hamza Raza" />
-        <meta name="twitter:description" content="Muhammad Hamza Raza's personal portfolio showcasing his skills, projects, and experience in web development." />
-        <meta name="twitter:image" content="https://hamidrazadev.vercel.app/assets/logo-512x512.png" />
-
         {/* Favicon */}
         <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
