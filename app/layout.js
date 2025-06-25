@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Toaster } from "react-hot-toast";
 import GlobalLoader from '@/components/layout/GlobalLoader';
+import { Analytics } from "@vercel/analytics/next";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -101,6 +102,7 @@ export default function RootLayout({ children }) {
           <main className="">
             {children}
           </main>
+          <Analytics />
           <Toaster />
           <Footer />
         </ThemeProviderUtil>
