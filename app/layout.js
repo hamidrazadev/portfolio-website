@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import { Toaster } from "react-hot-toast";
 import GlobalLoader from '@/components/layout/GlobalLoader';
 import { Analytics } from "@vercel/analytics/next";
+import CustomCursor from '@/components/layout/CustomCursor';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -63,6 +64,7 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.className} antialiased`}>
         <GlobalLoader />
         <ThemeProviderUtil>
+          <CustomCursor />
           <nav className="flex flex-col items-center sticky top-0 z-50 w-full my-4">
             <Navbar />
           </nav>

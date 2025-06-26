@@ -4,6 +4,7 @@
 @theme {
   --color-primary: #ff6f49;
   --color-secondary: #0a0c18;
+  --scroll-progress: 0%;
 }
 
 @custom-variant light (&:is(.light *));
@@ -16,64 +17,347 @@ html {
   @apply scroll-smooth bg-black;
   scrollbar-width: thin;
   scrollbar-color: var(--color-primary) var(--color-secondary);
+  scroll-behavior: smooth;
 }
 
-/* Webkit-based browsers (Chrome, Safari, Edge) */
-/* Main scrollbar container - auto hide trick */
-body::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-  opacity: 0;
-  /* Hidden by default */
-  transition: opacity 0.3s ease;
+/* ========================================
+   ENHANCED CREATIVE SCROLLBAR STYLES
+======================================== */
+
+/* Modern Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
 }
 
-/* Show scrollbar when hovering over body or scrolling */
-body:hover::-webkit-scrollbar,
-body:active::-webkit-scrollbar {
-  opacity: 1;
+/* Webkit-based browsers (Chrome, Safari, Edge) - Enhanced Design */
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
 }
 
-/* Optional: show scrollbar when hovering the scrollbar track itself */
-::-webkit-scrollbar:hover {
-  opacity: 1;
-}
-
-/* Scrollbar track */
+/* Scrollbar track - Glassmorphism effect */
 ::-webkit-scrollbar-track {
-  background: var(--color-secondary);
-  border-radius: 10px;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  background: rgba(10, 12, 24, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  margin: 4px;
+  border: 1px solid rgba(255, 111, 73, 0.1);
+  box-shadow:
+    inset 0 0 10px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 111, 73, 0.05);
 }
 
-/* Scrollbar thumb (draggable part) */
+/* Scrollbar thumb - Modern gradient design */
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
-  border-radius: 10px;
-  border: 2px solid var(--color-secondary);
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-  cursor: grab;
+  background: linear-gradient(135deg,
+      var(--color-primary) 0%,
+      #ff8c66 50%,
+      #da3001 100%);
+  border-radius: 12px;
+  border: 2px solid rgba(10, 12, 24, 0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: none;
+  /* Use custom cursor */
+  position: relative;
+  box-shadow:
+    0 2px 10px rgba(255, 111, 73, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+/* Scrollbar thumb hover - Glowing effect */
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff8c66;
-  box-shadow: 0 0 10px rgba(255, 111, 73, 0.5);
+  background: linear-gradient(135deg,
+      #ff8c66 0%,
+      var(--color-primary) 50%,
+      #ff4520 100%);
   transform: scale(1.1);
-  /* Enlarge on hover */
+  box-shadow:
+    0 4px 20px rgba(255, 111, 73, 0.6),
+    0 0 30px rgba(255, 111, 73, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 111, 73, 0.3);
 }
 
+/* Scrollbar thumb active - Press effect */
 ::-webkit-scrollbar-thumb:active {
-  background: var(--color-primary);
-  cursor: grabbing;
+  background: linear-gradient(135deg,
+      #da3001 0%,
+      var(--color-primary) 50%,
+      #ff8c66 100%);
   transform: scale(0.95);
-  /* Slight press effect */
+  box-shadow:
+    0 1px 5px rgba(255, 111, 73, 0.8),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Remove scrollbar buttons */
 ::-webkit-scrollbar-button {
   display: none;
   width: 0;
   height: 0;
 }
+
+/* Corner styling */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Enhanced scrollbar visibility with smooth transitions */
+body::-webkit-scrollbar {
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Show scrollbar on various interactions */
+body:hover::-webkit-scrollbar,
+body:active::-webkit-scrollbar,
+body:focus::-webkit-scrollbar,
+body.scrolling::-webkit-scrollbar {
+  opacity: 1;
+}
+
+/* Show scrollbar when hovering the scrollbar itself */
+::-webkit-scrollbar:hover {
+  opacity: 1 !important;
+}
+
+/* Animated scrollbar appearance */
+@keyframes scrollbar-glow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 2px 10px rgba(255, 111, 73, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  50% {
+    box-shadow:
+      0 4px 20px rgba(255, 111, 73, 0.5),
+      0 0 25px rgba(255, 111, 73, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Special glow effect when actively scrolling */
+body.actively-scrolling ::-webkit-scrollbar-thumb {
+  animation: scrollbar-glow 2s ease-in-out;
+}
+
+/* Progress indicator scrollbar for long content */
+.progress-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom,
+      var(--color-primary) 0%,
+      var(--color-primary) var(--scroll-progress, 0%),
+      rgba(255, 111, 73, 0.3) var(--scroll-progress, 0%),
+      rgba(255, 111, 73, 0.1) 100%);
+}
+
+/* Special scrollbar for specific containers */
+.scrollable-container::-webkit-scrollbar {
+  width: 8px;
+  opacity: 1;
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+  background: rgba(10, 12, 24, 0.6);
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom,
+      var(--color-primary),
+      #da3001);
+  border-radius: 8px;
+  border: 1px solid rgba(10, 12, 24, 0.5);
+}
+
+/* Responsive scrollbar */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 8px;
+    margin: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border-width: 1px;
+  }
+}
+
+/* Light theme support */
+@media (prefers-color-scheme: light) {
+  .light ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 111, 73, 0.15);
+    box-shadow:
+      inset 0 0 10px rgba(0, 0, 0, 0.1),
+      0 0 20px rgba(255, 111, 73, 0.03);
+  }
+
+  .light ::-webkit-scrollbar-thumb {
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow:
+      0 2px 10px rgba(255, 111, 73, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* ========================================
+   ENHANCED CUSTOM CURSOR STYLES
+======================================== */
+
+/* Hide default cursor */
+* {
+  cursor: none !important;
+}
+
+/* Custom cursor container */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99;
+  transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  /* mix-blend-mode: luminosity; */
+  box-shadow: 0 0 20px rgba(255, 111, 73, 0.3);
+}
+
+/* Cursor follower (trailing effect) */
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+/* Hover states for interactive elements */
+.cursor-hover .cursor {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 111, 73, 0.2);
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 30px rgba(255, 111, 73, 0.5);
+}
+
+.cursor-hover .cursor-follower {
+  width: 80px;
+  height: 80px;
+  opacity: 0.8;
+}
+
+/* Click state */
+.cursor-click .cursor {
+  transform: scale(0.8);
+  background: #ff8c66;
+}
+
+.cursor-click .cursor-follower {
+  transform: scale(0.9);
+}
+
+/* Text selection state */
+.cursor-text .cursor {
+  width: 2px;
+  height: 20px;
+  border-radius: 2px;
+  background: var(--color-primary);
+  transform: rotate(0deg);
+}
+
+.cursor-text .cursor-follower {
+  opacity: 0;
+}
+
+/* Loading state */
+.cursor-loading .cursor {
+  animation: cursor-pulse 1s infinite ease-in-out;
+}
+
+@keyframes cursor-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+/* Cursor variants for different elements */
+.cursor-button .cursor {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 111, 73, 0.1);
+  border: 2px solid var(--color-primary);
+}
+
+.cursor-link .cursor {
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 111, 73, 0.3);
+}
+
+/* Special cursor for scrollbar interaction */
+.cursor-scrolling .cursor {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 111, 73, 0.15);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+}
+
+.cursor-scrolling .cursor-follower {
+  width: 60px;
+  height: 60px;
+  border-color: rgba(255, 111, 73, 0.4);
+}
+
+/* Hide cursor when it's inactive */
+.cursor-hidden .cursor,
+.cursor-hidden .cursor-follower {
+  opacity: 0;
+}
+
+/* Hide cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+
+  .cursor,
+  .cursor-follower {
+    display: none;
+  }
+
+  * {
+    cursor: auto !important;
+  }
+}
+
+/* ========================================
+   SCROLL MARKER SECTIONS
+======================================== */
 
 #services,
 #about,
@@ -85,6 +369,10 @@ body:active::-webkit-scrollbar {
   @apply scroll-m-[60px] lg:scroll-m-[80px];
 }
 
+/* ========================================
+   ENHANCED LOADER ANIMATION
+======================================== */
+
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 200px;
@@ -94,6 +382,7 @@ body:active::-webkit-scrollbar {
   border: 2px solid;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 111, 73, 0.2);
 }
 
 .loader::before {
@@ -115,4 +404,39 @@ body:active::-webkit-scrollbar {
   100% {
     left: calc(100% + 20px);
   }
+}
+
+/* ========================================
+   UTILITY CLASSES
+======================================== */
+
+/* Interactive element class */
+.interactive {
+  transition: all 0.3s ease;
+}
+
+.interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 111, 73, 0.2);
+}
+
+/* Smooth focus styles */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Custom selection color */
+::selection {
+  background: rgba(255, 111, 73, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(255, 111, 73, 0.3);
+  color: white;
 }
