@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme {
+  --color-primary: #ff6f49;
+  --color-secondary: #0a0c18;
+}
+
 @custom-variant light (&:is(.light *));
 
 * {
@@ -18,7 +23,8 @@ html {
 body::-webkit-scrollbar {
   width: 10px;
   height: 10px;
-  opacity: 0; /* Hidden by default */
+  opacity: 0;
+  /* Hidden by default */
   transition: opacity 0.3s ease;
 }
 
@@ -52,24 +58,21 @@ body:active::-webkit-scrollbar {
 ::-webkit-scrollbar-thumb:hover {
   background: #ff8c66;
   box-shadow: 0 0 10px rgba(255, 111, 73, 0.5);
-  transform: scale(1.1); /* Enlarge on hover */
+  transform: scale(1.1);
+  /* Enlarge on hover */
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: #e55a36;
+  background: var(--color-primary);
   cursor: grabbing;
-  transform: scale(0.95); /* Slight press effect */
+  transform: scale(0.95);
+  /* Slight press effect */
 }
 
 ::-webkit-scrollbar-button {
   display: none;
   width: 0;
   height: 0;
-}
-
-@theme {
-  --color-primary: #ff6f49;
-  --color-secondary: #0a0c18;
 }
 
 #services,
@@ -92,6 +95,7 @@ body:active::-webkit-scrollbar {
   position: relative;
   overflow: hidden;
 }
+
 .loader::before {
   content: "";
   position: absolute;
