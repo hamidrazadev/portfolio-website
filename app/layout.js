@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
             "@type": "Person",
             "name": "Muhammad Hamid Raza",
             "url": "https://hamidrazadev.vercel.app",
-            "image": "https://hamidrazadev.vercel.app/assets/logo-512x512.png",
+            "image": "https://hamidrazadev.vercel.app/favicon.ico",
             "sameAs": [
               "https://twitter.com/@HamidRaza_Dev",
               "https://www.linkedin.com/in/hamidrazadev",
