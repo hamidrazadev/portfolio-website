@@ -1,12 +1,11 @@
-"use client"
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { FaArrowUpRightFromSquare, FaFolderOpen } from 'react-icons/fa6'
-import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll'
-import { MdWork } from 'react-icons/md'
+"use client";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { FaFolderOpen } from 'react-icons/fa6';
+import { MdWork } from 'react-icons/md';
+import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll';
 
-// Hero data in JSON format
 const heroData = {
     greeting: "Hello!",
     name: "Muhammad Hamid Raza",
@@ -18,16 +17,8 @@ const heroData = {
         label: "Years Experience"
     },
     buttons: [
-        {
-            text: "Portfolio",
-            href: "#portfolio",
-            isPrimary: true
-        },
-        {
-            text: "Hire Me",
-            href: "#contact",
-            isPrimary: false
-        }
+        { text: "Portfolio", href: "#portfolio", isPrimary: true },
+        { text: "Hire Me", href: "#contact", isPrimary: false }
     ],
     decorativeElements: [
         { type: "circle", color: "blue", size: "small", position: "top-left" },
@@ -37,13 +28,17 @@ const heroData = {
         { type: "circle", color: "cyan", size: "medium", position: "bottom-left" },
         { type: "circle", color: "purple", size: "small", position: "bottom-right" }
     ]
-}
+};
 
 export default function Hero() {
     return (
-        <section id="top" className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 overflow-hidden py-10 lg:py-20">
+        <section
+            id="top"
+            className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 overflow-hidden py-10 lg:py-20"
+            aria-labelledby="hero-title"
+        >
             {/* Decorative Background Elements */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0" aria-hidden="true">
                 {heroData.decorativeElements.map((element, index) => (
                     <div
                         key={index}
@@ -84,7 +79,7 @@ export default function Hero() {
                             {/* Main Heading */}
                             <AnimatedOnScroll animation="fade-up" delay={0.3}>
                                 <div className="space-y-4">
-                                    <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+                                    <h1 id="hero-title" className="text-5xl lg:text-6xl font-bold leading-tight">
                                         I'm <span className="text-primary">{heroData.name}</span>,
                                     </h1>
                                     <h2 className="text-4xl lg:text-5xl font-bold text-white/90">
@@ -111,17 +106,18 @@ export default function Hero() {
                                                 ? 'bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl'
                                                 : 'bg-white/10 hover:bg-primary text-white border border-white/30 backdrop-blur-sm'
                                                 }`}
+                                            aria-label={button.text}
                                         >
                                             {button.text}
-                                            {
-                                                button.isPrimary ?
-                                                    <span className="ml-2">
-                                                        <FaFolderOpen />
-                                                    </span> :
-                                                    <span className="ml-2">
-                                                        <MdWork />
-                                                    </span>
-                                            }
+                                            {button.isPrimary ? (
+                                                <span className="ml-2" aria-hidden="true">
+                                                    <FaFolderOpen />
+                                                </span>
+                                            ) : (
+                                                <span className="ml-2" aria-hidden="true">
+                                                    <MdWork />
+                                                </span>
+                                            )}
                                         </Link>
                                     ))}
                                 </div>
@@ -132,14 +128,17 @@ export default function Hero() {
                     {/* Right Content - Image */}
                     <AnimatedOnScroll animation="fade-left" delay={0.2}>
                         <div className="relative flex justify-center lg:justify-end">
-                            {/* Main Image Container */}
                             <div className="relative">
                                 {/* Circular Background */}
-                                <div className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[500px] lg:h-[500px] rounded-full bg-gradient-to-br from-orange-400/20 to-purple-600/20 backdrop-blur-sm border border-white/20 flex items-end justify-center overflow-hidden">
+                                <div
+                                    className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[500px] lg:h-[500px] rounded-full bg-gradient-to-br from-orange-400/20 to-purple-600/20 backdrop-blur-sm border border-white/20 flex items-end justify-center overflow-hidden"
+                                    role="img"
+                                    aria-label="Image of Muhammad Hamid Raza"
+                                >
                                     <div className="w-full h-full relative">
                                         <Image
                                             src={heroData.image}
-                                            alt={heroData.name}
+                                            alt={`Photo of ${heroData.name}`}
                                             fill
                                             className="object-cover object-top"
                                             priority
@@ -148,13 +147,13 @@ export default function Hero() {
                                 </div>
 
                                 {/* Decorative rings */}
-                                <div className="absolute inset-0 rounded-full border-2 border-primary/30 scale-110"></div>
-                                <div className="absolute inset-0 rounded-full border border-purple-400/30 scale-125"></div>
+                                <div className="absolute inset-0 rounded-full border-2 border-primary/30 scale-110" aria-hidden="true"></div>
+                                <div className="absolute inset-0 rounded-full border border-purple-400/30 scale-125" aria-hidden="true"></div>
                             </div>
                         </div>
                     </AnimatedOnScroll>
                 </div>
             </div>
         </section>
-    )
+    );
 }

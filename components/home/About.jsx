@@ -47,7 +47,7 @@ const aboutData = {
 
 export default function About() {
     return (
-        <section id="about" className="py-10 lg:py-20 bg-slate-950 overflow-hidden">
+        <section id="about" className="py-10 lg:py-20 bg-slate-950 overflow-hidden" aria-labelledby="about-title">
             <div className="container mx-auto px-4">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
 
@@ -59,7 +59,7 @@ export default function About() {
                                 <div className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px] rounded-full border-4 border-primary overflow-hidden bg-gray-200">
                                     <Image
                                         src={aboutData.image}
-                                        alt={aboutData.personalInfo.name.value}
+                                        alt={`Profile picture of ${aboutData.personalInfo.name.value}`}
                                         width={450}
                                         height={450}
                                         className="w-full h-full object-cover object-top"
@@ -76,7 +76,7 @@ export default function About() {
 
                             {/* Badge */}
                             <AnimatedOnScroll animation="fade-down" delay={0.2}>
-                                <div className="inline-block">
+                                <div className="inline-block" role="presentation" aria-hidden="true">
                                     <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
                                         <span className="text-primary font-medium">{aboutData.badge}</span>
                                     </div>
@@ -85,7 +85,7 @@ export default function About() {
 
                             {/* Main Title */}
                             <AnimatedOnScroll animation="fade-up" delay={0.3}>
-                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+                                <h2 id="about-title" className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
                                     {aboutData.title}
                                 </h2>
                             </AnimatedOnScroll>
@@ -99,7 +99,7 @@ export default function About() {
 
                             {/* Personal Information Grid */}
                             <AnimatedOnScroll animation="fade-up" delay={0.5}>
-                                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10" aria-label="Personal Information">
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div className="space-y-1">
                                             <span className="text-primary font-medium text-sm">
@@ -115,7 +115,7 @@ export default function About() {
                                                 {aboutData.personalInfo.phone.label}
                                             </span>
                                             <p className="text-white font-medium">
-                                                <Link href={`tel:${aboutData.personalInfo.phone.value}`}>{aboutData.personalInfo.phone.value}</Link>
+                                                <Link href={`tel:${aboutData.personalInfo.phone.value}`} aria-label={`Call ${aboutData.personalInfo.phone.value}`}>{aboutData.personalInfo.phone.value}</Link>
                                             </p>
                                         </div>
 
@@ -124,7 +124,7 @@ export default function About() {
                                                 {aboutData.personalInfo.email.label}
                                             </span>
                                             <p className="text-white font-medium">
-                                                <Link href={`mailto:${aboutData.personalInfo.email.value}`}>{aboutData.personalInfo.email.value}</Link>
+                                                <Link href={`mailto:${aboutData.personalInfo.email.value}`} aria-label={`Email ${aboutData.personalInfo.email.value}`}>{aboutData.personalInfo.email.value}</Link>
                                             </p>
                                         </div>
 
@@ -133,7 +133,9 @@ export default function About() {
                                                 {aboutData.personalInfo.twitter.label}
                                             </span>
                                             <p className="text-white font-medium">
-                                                <Link href={`https://twitter.com/${aboutData.personalInfo.twitter.value}`} target="_blank">{aboutData.personalInfo.twitter.value}</Link>
+                                                <Link href={`https://twitter.com/${aboutData.personalInfo.twitter.value}`} target="_blank" rel="noopener noreferrer" aria-label={`Visit Twitter profile of ${aboutData.personalInfo.twitter.value}`}>
+                                                    {aboutData.personalInfo.twitter.value}
+                                                </Link>
                                             </p>
                                         </div>
                                     </div>
@@ -148,6 +150,8 @@ export default function About() {
                                             key={index}
                                             href={button.href}
                                             target={button.isPrimary ? "_self" : "_blank"}
+                                            rel={!button.isPrimary ? "noopener noreferrer" : undefined}
+                                            aria-label={button.isPrimary ? button.text : `${button.text} (opens in new tab)`}
                                             className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold transition-all duration-300 ${button.isPrimary
                                                 ? 'bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl'
                                                 : 'bg-white/10 hover:bg-primary text-white border border-white/30 backdrop-blur-sm'
@@ -156,11 +160,11 @@ export default function About() {
                                             <span>{button.text}</span>
                                             {
                                                 button.isPrimary &&
-                                                <FaEnvelope className="w-4 h-4" />
+                                                <FaEnvelope className="w-4 h-4" aria-hidden="true" />
                                             }
                                             {
                                                 button.hasIcon && !button.isPrimary && (
-                                                    <FaDownload className="w-4 h-4" />
+                                                    <FaDownload className="w-4 h-4" aria-hidden="true" />
                                                 )
                                             }
                                         </Link>

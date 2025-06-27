@@ -32,7 +32,6 @@ export default function Contact() {
     const handleOnSubmit = async (e) => {
         e.preventDefault();
 
-        // Check if service is selected
         if (!formData.service) {
             toast.error('Please select a service.');
             return;
@@ -93,16 +92,17 @@ export default function Contact() {
             id="contact"
             className="relative min-h-screen bg-cover bg-center flex items-center justify-center px-4 py-16 overflow-hidden"
             style={{ backgroundImage: `url(${bgImage})` }}
+            aria-labelledby="contact-title"
         >
-            <div className="absolute inset-0 bg-black opacity-70"></div>
+            <div className="absolute inset-0 bg-black opacity-70" aria-hidden="true"></div>
 
             <AnimatedOnScroll animation="zoom-in" delay={0.1}>
                 <div className="relative z-10 w-full max-w-3xl bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg text-white">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
+                    <h2 id="contact-title" className="text-4xl md:text-5xl font-bold mb-8 text-center">
                         Let&apos;s make your brand brilliant!
                     </h2>
 
-                    <form onSubmit={handleOnSubmit} className="space-y-6">
+                    <form onSubmit={handleOnSubmit} className="space-y-6" aria-label="Contact Form">
                         <AnimatedOnScroll animation="fade-up" delay={0.2}>
                             <div className="flex flex-col gap-2">
                                 <label htmlFor="name" className="text-sm font-medium">What&apos;s your name?</label>
@@ -115,6 +115,8 @@ export default function Contact() {
                                     className="w-full p-3 bg-gray-700/80 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                                     placeholder="Your name"
                                     required
+                                    aria-required="true"
+                                    aria-label="Your Name"
                                 />
                             </div>
                         </AnimatedOnScroll>
@@ -131,6 +133,8 @@ export default function Contact() {
                                     className="w-full p-3 bg-gray-700/80 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                                     placeholder="example@domain.com"
                                     required
+                                    aria-required="true"
+                                    aria-label="Your Email Address"
                                 />
                             </div>
                         </AnimatedOnScroll>
@@ -146,29 +150,41 @@ export default function Contact() {
                                     className="w-full p-3 bg-gray-700/80 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary h-32"
                                     placeholder="Tell me about your project"
                                     required
+                                    aria-required="true"
+                                    aria-label="Your Project Description"
                                 ></textarea>
                             </div>
                         </AnimatedOnScroll>
 
                         <AnimatedOnScroll animation="fade-up" delay={0.55}>
                             <div className="flex flex-col gap-2">
-                                <label className="text-sm font-medium">Select a Service</label>
+                                <label className="text-sm font-medium" id="service-label">Select a Service</label>
                                 <div className="relative">
                                     <button
                                         type="button"
                                         onClick={() => setDropdownOpen(!dropdownOpen)}
                                         className="w-full p-3 bg-gray-700/80 rounded-lg flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-primary"
+                                        aria-haspopup="listbox"
+                                        aria-expanded={dropdownOpen}
+                                        aria-labelledby="service-label"
+                                        aria-label="Select a Service"
                                     >
                                         <span>{formData.service || 'Choose a service'}</span>
-                                        {dropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
+                                        {dropdownOpen ? <FaChevronUp aria-hidden="true" /> : <FaChevronDown aria-hidden="true" />}
                                     </button>
 
                                     {dropdownOpen && (
-                                        <ul className="absolute z-20 mt-2 w-full bg-white text-black rounded-lg shadow-lg max-h-60 overflow-y-auto transition-all">
+                                        <ul
+                                            className="absolute z-20 mt-2 w-full bg-white text-black rounded-lg shadow-lg max-h-60 overflow-y-auto transition-all"
+                                            role="listbox"
+                                            aria-label="Service Options"
+                                        >
                                             {services.map((service) => (
                                                 <li
                                                     key={service.id}
                                                     className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-all"
+                                                    role="option"
+                                                    aria-selected={formData.service === service.title}
                                                     onClick={() => handleServiceSelect(service.title)}
                                                 >
                                                     {service.title}
@@ -189,6 +205,7 @@ export default function Contact() {
                                     type="file"
                                     onChange={handleOnChange}
                                     className="flex w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-secondary cursor-pointer transition-all"
+                                    aria-label="Attach a file"
                                 />
                             </div>
                         </AnimatedOnScroll>
@@ -198,9 +215,10 @@ export default function Contact() {
                                 <button
                                     type="submit"
                                     className="cursor-pointer flex items-center gap-2 px-4 py-2 rounded-full bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl transition-all duration-300"
+                                    aria-label="Submit Contact Form and Get a Quote"
                                 >
                                     <span>Get a Quote</span>
-                                    <FaRegCommentDots className="w-5 h-5" />
+                                    <FaRegCommentDots className="w-5 h-5" aria-hidden="true" />
                                 </button>
                             </div>
                         </AnimatedOnScroll>

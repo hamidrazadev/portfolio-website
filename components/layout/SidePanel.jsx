@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import ThemeToggle from './ThemeToggle';
@@ -16,6 +16,17 @@ const NavUrls = [
 ];
 
 export default function SidePanel({ isOpen, onClose }) {
+
+    // Optional: Prevent body scroll when panel is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => { document.body.style.overflow = ''; }
+    }, [isOpen]);
+
     return (
         <>
             {/* Overlay */}
@@ -25,7 +36,11 @@ export default function SidePanel({ isOpen, onClose }) {
             />
 
             {/* Side Panel */}
-            <div className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div
+                className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                role="dialog"
+                aria-modal="true"
+            >
                 <div className="flex flex-col h-full">
 
                     {/* Header */}
@@ -36,6 +51,7 @@ export default function SidePanel({ isOpen, onClose }) {
                             </Link>
                             <button
                                 onClick={onClose}
+                                aria-label="Close menu"
                                 className="p-2 rounded-full hover:bg-gray-100 transition-colors"
                             >
                                 <IoClose className="text-2xl text-secondary" />
@@ -47,7 +63,7 @@ export default function SidePanel({ isOpen, onClose }) {
                     <div className="flex-1 px-6 py-8 overflow-y-auto">
                         <nav className="space-y-6">
                             {NavUrls.map((navUrl, index) => (
-                                <AnimatedOnScroll key={index} animation="fade-right" delay={0.2 + index * 0.1}>
+                                <AnimatedOnScroll key={index} animation="fade-up" delay={0.2 + index * 0.1}>
                                     <Link
                                         href={navUrl.href}
                                         onClick={onClose}
@@ -62,7 +78,7 @@ export default function SidePanel({ isOpen, onClose }) {
 
                     {/* Footer Actions */}
                     <div className="p-6 border-t border-gray-100 space-y-4">
-                        {/* Theme Toggle */}
+                        {/* Theme Toggle (if you want to enable later) */}
                         {/* <div className="flex items-center justify-between">
                             <span className="text-secondary font-medium">Theme</span>
                             <ThemeToggle />

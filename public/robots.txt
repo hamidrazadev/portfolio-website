@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://hamidrazadev.vercel.app
+
+# Sitemaps
+Sitemap: https://hamidrazadev.vercel.app/sitemap.xml

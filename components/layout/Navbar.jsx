@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { CgMenu } from "react-icons/cg";
 import SidePanel from './SidePanel';
@@ -17,6 +17,10 @@ const NavUrls = [
 
 export default function Navbar() {
     const [isSidePanelOpen, setIsSidePanelOpen] = useState(false);
+
+    const toggleSidePanel = useCallback(() => {
+        setIsSidePanelOpen(prev => !prev);
+    }, []);
 
     return (
         <div className="container mx-auto rounded-full bg-white shadow-md shadow-gray-300 lg:p-4 flex items-center justify-between lg:h-[80px] h-[60px] p-2">
@@ -50,7 +54,11 @@ export default function Navbar() {
 
                 {/* Mobile Menu Button */}
                 <AnimatedOnScroll animation="fade-left" delay={0.7}>
-                    <button onClick={() => setIsSidePanelOpen(!isSidePanelOpen)} className="flex lg:hidden items-center justify-center p-2 rounded-full shadow shadow-slate-50 bg-primary text-2xl text-white">
+                    <button
+                        onClick={toggleSidePanel}
+                        aria-label="Toggle Navigation Menu"
+                        className="flex lg:hidden items-center justify-center p-2 rounded-full shadow shadow-slate-50 bg-primary text-2xl text-white"
+                    >
                         <CgMenu />
                     </button>
                 </AnimatedOnScroll>

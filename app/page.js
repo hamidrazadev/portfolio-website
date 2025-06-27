@@ -65,9 +65,8 @@ export const metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1.0,
-  maximumScale: 1.0,
-  userScalable: "no",
-  themeColor: "#ffffff",
+  // Removed maximumScale and userScalable to allow zooming for accessibility
+  themeColor: "#fc8768",
   colorScheme: "dark"
 };
 
