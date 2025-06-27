@@ -23,7 +23,7 @@ export default function Navbar() {
             {/* Logo */}
             <AnimatedOnScroll animation="fade-right" delay={0.1}>
                 <Link href={'#top'} className="items-center justify-center flex overflow-clip rounded-full h-12 w-12 lg:h-16 lg:w-16 bg-white shadow shadow-slate-50">
-                    <Image src={'/assets/logo.png'} className="rounded-full" width={60} height={60} alt="Logo" />
+                    <Image src={'/assets/logo.png'} className="rounded-full" width={60} height={60} alt="Logo" priority />
                 </Link>
             </AnimatedOnScroll>
 

@@ -59,6 +59,7 @@ export default function Services() {
                                     {/* Image Container */}
                                     <div className="relative rounded-2xl overflow-hidden bg-slate-700/30 aspect-[4/3] mb-6">
                                         <Image
+                                        priority
                                             src={service.image || "/assets/placeholder.png"}
                                             alt={service.title}
                                             fill

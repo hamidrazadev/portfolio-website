@@ -43,6 +43,7 @@ function SkillCard({ skill, index }) {
             <div className="flex justify-center mb-6">
                 <div className="w-24 h-24 rounded-full flex items-center justify-center">
                     <Image
+                    priority
                         src={skill.icon}
                         alt={skill.name}
                         width={60}

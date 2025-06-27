@@ -44,6 +44,7 @@ export default function Portfolio() {
                             <div className="group rounded-2xl p-6 border border-slate-700/50 hover:border-primary/30 transition-all duration-300 hover:scale-[1.02] h-96 flex items-center justify-center relative overflow-hidden">
 
                                 <Image
+                                priority
                                     src={skill.image}
                                     alt={skill.name}
                                     fill

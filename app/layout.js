@@ -4,14 +4,19 @@ import { Providers as ThemeProviderUtil } from "@/utils/ThemeProviderUtil";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Toaster } from "react-hot-toast";
-import GlobalLoader from '@/components/layout/GlobalLoader';
+// import GlobalLoader from '@/components/layout/GlobalLoader';
 import { Analytics } from "@vercel/analytics/next";
-import CustomCursor from '@/components/layout/CustomCursor';
+import dynamic from 'next/dynamic';
+// import CustomCursor from '@/components/layout/CustomCursor';
+
+const CustomCursor = dynamic(() => import('@/components/layout/CustomCursor'));
+const GlobalLoader = dynamic(() => import('@/components/layout/GlobalLoader'));
 
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-poppins'
+  variable: '--font-poppins',
+  display: 'swap'
 })
 
 export default function RootLayout({ children }) {
@@ -27,8 +32,11 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/manifest.json" />
 
         {/* Preconnect for Performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" />
+        </noscript>
+
 
         {/* SEO JSON-LD Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -71,7 +79,7 @@ export default function RootLayout({ children }) {
           <main className="">
             {children}
           </main>
-          <Analytics />
+          <Analytics mode="lazyOnload" />
           <Toaster />
           <Footer />
         </ThemeProviderUtil>
