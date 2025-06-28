@@ -37,35 +37,57 @@ export default function RootLayout({ children }) {
 
 
         {/* SEO JSON-LD Structured Data */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Muhammad Hamid Raza",
-            "url": "https://hamidrazadev.vercel.app",
-            "image": "https://hamidrazadev.vercel.app/favicon.ico",
-            "sameAs": [
-              "https://twitter.com/@HamidRaza_Dev",
-              "https://www.linkedin.com/in/hamidrazadev",
-              "https://github.com/hamidrazadev",
-              "https://www.facebook.com/hamidraza.dev/",
-              "https://www.instagram.com/hamidraza.dev/"
-            ],
-            "jobTitle": "Full Stack Developer",
-            "description": "Muhammad Hamid Raza's personal portfolio website showcasing his skills, projects, and experience in web development.",
-            "knowsAbout": [
-              "Frontend Development",
-              "Backend Development",
-              "Full Stack Development",
-              "Web Development",
-              "React.js",
-              "Next.js",
-              "Node.js",
-              "MongoDB"
-            ],
-            "keywords": "Muhammad Hamid Raza, Hamid Raza Portfolio, Web Developer Portfolio, Frontend Developer, Backend Developer, Full Stack Developer, MHR Portfolio"
-          })
-        }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Muhammad Hamid Raza",
+              "url": "https://hamidrazadev.vercel.app",
+              "image": "https://hamidrazadev.vercel.app/favicon.ico",
+              "sameAs": [
+                "https://twitter.com/HamidRaza_Dev",
+                "https://www.linkedin.com/in/hamidrazadev",
+                "https://github.com/hamidrazadev",
+                "https://www.facebook.com/hamidraza.dev/",
+                "https://www.instagram.com/hamidraza.dev/"
+              ],
+              "jobTitle": "Full Stack Developer",
+              "description": "Muhammad Hamid Raza's personal portfolio website showcasing his skills, projects, and experience in web development.",
+              "knowsAbout": [
+                "Frontend Development",
+                "Backend Development",
+                "Full Stack Development",
+                "Web Development",
+                "React.js",
+                "Next.js",
+                "Node.js",
+                "MongoDB"
+              ],
+              "keywords": "Muhammad Hamid Raza, Hamid Raza Portfolio, Web Developer Portfolio, Frontend Developer, Backend Developer, Full Stack Developer, MHR Portfolio"
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "url": "https://hamidrazadev.vercel.app",
+              "name": "Muhammad Hamid Raza Portfolio",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Muhammad Hamid Raza",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://hamidrazadev.vercel.app/favicon.ico"
+                }
+              }
+            }),
+          }}
+        />
       </head>
       <body className={`${poppins.className} antialiased`}>
         <GlobalLoader />
