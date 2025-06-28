@@ -34,9 +34,9 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value:
               "default-src 'self'; " +
-              "style-src 'self' https://fonts.googleapis.com; " +
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
               "font-src 'self' https://fonts.gstatic.com; " +
-              "script-src 'self'; " +
+              "script-src 'self' 'unsafe-inline'; " +
               "object-src 'none'; " +
               "frame-ancestors 'none'; " +
               "base-uri 'self';",
