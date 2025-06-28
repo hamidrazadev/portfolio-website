@@ -32,10 +32,8 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/manifest.json" />
 
         {/* Preconnect for Performance */}
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-        <noscript>
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" />
-        </noscript>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style" crossOrigin="anonymous"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" crossOrigin="anonymous"/>
 
 
         {/* SEO JSON-LD Structured Data */}
