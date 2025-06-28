@@ -17,19 +17,14 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 const nextConfig = {
   images: {
     remotePatterns: [
-      // Uncomment or add remote image sources here if needed
-      // {
-      //   protocol: "https",
-      //   hostname: "www.sellmycartoday.uk",
-      //   pathname: "/smc/wp-content/uploads/**",
-      // },
+      // Add your remote image hosts here if needed
     ],
   },
 
   async headers() {
     return [
       {
-        source: "/(.*)", // Apply to all routes
+        source: "/(.*)",
         headers: [
           {
             key: "Strict-Transport-Security",
@@ -39,9 +34,9 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value:
               "default-src 'self'; " +
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+              "style-src 'self' https://fonts.googleapis.com; " +
               "font-src 'self' https://fonts.gstatic.com; " +
-              "script-src 'self' 'unsafe-inline'; " +
+              "script-src 'self'; " +
               "object-src 'none'; " +
               "frame-ancestors 'none'; " +
               "base-uri 'self';",
