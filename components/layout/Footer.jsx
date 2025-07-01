@@ -97,17 +97,17 @@ export default function Footer() {
     };
 
     return (
-        <footer className="bg-[#0f0f1c] text-white px-4 lg:px-16 pt-12 pb-6" aria-labelledby="footer-heading">
+        <footer className="bg-[#0f0f1c] light:bg-light-secondary text-white light:text-black px-4 lg:px-16 pt-12 pb-6" aria-labelledby="footer-heading">
             <h2 id="footer-heading" className="sr-only">Footer</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12 border-b border-gray-700 pb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12 border-b border-gray-700 light:border-gray-300 pb-8">
                 {/* Company Info */}
                 <AnimatedOnScroll animation="fade-down" delay={0.1}>
                     <div className="flex flex-col items-start gap-4">
                         <div className="flex items-center gap-3">
                             <Image src={footerData.logo} alt="Muhammad Hamid Raza Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover" priority />
-                            <h3 className="text-2xl font-semibold text-primary">{footerData.companyName}</h3>
+                            <h3 className="text-2xl font-semibold text-primary light:text-light-primary">{footerData.companyName}</h3>
                         </div>
-                        <p className="text-gray-300 text-sm leading-relaxed max-w-xs">{footerData.description}</p>
+                        <p className="text-gray-300 light:text-gray-700 text-sm leading-relaxed max-w-xs">{footerData.description}</p>
                     </div>
                 </AnimatedOnScroll>
 
@@ -118,7 +118,7 @@ export default function Footer() {
                         <ul className="space-y-2 flex flex-col items-start">
                             {footerData.navigation.map((item, index) => (
                                 <li key={index}>
-                                    <Link href={item.url} className="flex items-center gap-2 cursor-pointer hover:text-primary transition" aria-label={`Go to ${item.text} section`}>
+                                    <Link href={item.url} className="flex items-center gap-2 cursor-pointer hover:text-primary light:hover:text-light-primary transition" aria-label={`Go to ${item.text} section`}>
                                         <span className="text-xl">&#8250;</span> {item.text}
                                     </Link>
                                 </li>
@@ -131,24 +131,24 @@ export default function Footer() {
                 <AnimatedOnScroll animation="fade-up" delay={0.3}>
                     <address className="not-italic">
                         <h3 className="text-lg font-semibold mb-4">Contact</h3>
-                        <ul className="space-y-2 text-sm text-gray-300 flex flex-col items-start">
+                        <ul className="space-y-2 text-sm text-gray-300 light:text-gray-700 flex flex-col items-start">
                             <li>
-                                <Link href={`tel:${footerData.contact.phone}`} className="hover:text-primary flex items-center" aria-label={`Call me at ${footerData.contact.phone}`}>
+                                <Link href={`tel:${footerData.contact.phone}`} className="hover:text-primary light:hover:text-light-primary flex items-center" aria-label={`Call me at ${footerData.contact.phone}`}>
                                     <span className="mr-2"><FaPhone /></span> {footerData.contact.phone}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`mailto:${footerData.contact.email}`} className="hover:text-primary flex items-center" aria-label={`Email me at ${footerData.contact.email}`}>
+                                <Link href={`mailto:${footerData.contact.email}`} className="hover:text-primary light:hover:text-light-primary flex items-center" aria-label={`Email me at ${footerData.contact.email}`}>
                                     <span className="mr-2"><HiOutlineMailOpen /></span> {footerData.contact.email}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`https://www.google.com/maps/search/${encodeURIComponent(footerData.contact.location)}`} target="_blank" rel="noopener noreferrer" className="hover:text-primary flex items-center" aria-label={`Find me at ${footerData.contact.location}`}>
+                                <Link href={`https://www.google.com/maps/search/${encodeURIComponent(footerData.contact.location)}`} target="_blank" rel="noopener noreferrer" className="hover:text-primary light:hover:text-light-primary flex items-center" aria-label={`Find me at ${footerData.contact.location}`}>
                                     <span className="mr-2"><FaLocationDot /></span> {footerData.contact.location}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={footerData.contact.website} target="_blank" rel="noopener noreferrer" className="hover:text-primary flex items-center" aria-label="Visit my website">
+                                <Link href={footerData.contact.website} target="_blank" rel="noopener noreferrer" className="hover:text-primary light:hover:text-light-primary flex items-center" aria-label="Visit my website">
                                     <span className="mr-2"><FaGlobe /></span> Visit Website
                                 </Link>
                             </li>
@@ -167,14 +167,14 @@ export default function Footer() {
                             {!isAppInstalled && (
                                 <button
                                     onClick={handleInstallClick}
-                                    className="cursor-pointer px-4 py-2 rounded-full font-semibold transition-transform transform hover:scale-105 bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl inline-flex gap-2 items-center w-fit"
+                                    className="cursor-pointer px-4 py-2 rounded-full font-semibold transition-transform transform hover:scale-105 bg-primary light:bg-light-primary hover:bg-secondary light:hover:bg-light-secondary text-white light:text-black hover:text-primary light:hover:text-light-primary border border-secondary light:border-gray-400 hover:border-primary light:hover:border-light-primary shadow-lg hover:shadow-xl inline-flex gap-2 items-center w-fit"
                                     aria-label="Install my portfolio app"
                                 >
                                     <FaDownload /> Install App
                                 </button>
                             )}
                             {isAppInstalled && (
-                                <span className="text-sm text-gray-400">App is already installed.</span>
+                                <span className="text-sm text-gray-400 light:text-gray-700">App is already installed.</span>
                             )}
                         </div>
 
@@ -190,7 +190,7 @@ export default function Footer() {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             aria-label={`Visit my ${item.label} profile`}
-                                            className="hover:text-primary transition-transform transform hover:scale-110"
+                                            className="hover:text-primary light:hover:text-light-primary transition-transform transform hover:scale-110"
                                         >
                                             <IconComponent />
                                         </Link>
@@ -204,7 +204,7 @@ export default function Footer() {
 
             {/* Bottom Section */}
             <AnimatedOnScroll animation="fade-down" delay={0.2}>
-                <div className="mt-6 text-gray-400 text-sm text-center flex flex-col items-center gap-2">
+                <div className="mt-6 text-gray-400 light:text-gray-700 text-sm text-center flex flex-col items-center gap-2">
                     <span>{footerData.copyright}</span>
                 </div>
             </AnimatedOnScroll>

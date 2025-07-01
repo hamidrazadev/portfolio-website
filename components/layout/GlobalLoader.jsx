@@ -33,7 +33,7 @@ export default function GlobalLoader() {
         <div
             role="status"
             aria-live="polite"
-            className={`fixed inset-0 z-[9999] flex flex-col gap-5 items-center text-center justify-center bg-white dark:bg-black transition-opacity duration-500 ease-in-out ${isLoading ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
+            className={`fixed inset-0 z-[9999] flex flex-col gap-5 items-center text-center justify-center light:bg-light-secondary bg-black transition-opacity duration-500 ease-in-out ${isLoading ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
         >
             <div className="loader" />
             <h2 className="sm:text-5xl text-3xl font-semibold animate-pulse duration-150">

@@ -6,6 +6,7 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { CgMenu } from "react-icons/cg";
 import SidePanel from './SidePanel';
 import AnimatedOnScroll from '@/components/layout/AnimatedOnScroll';
+import ThemeToggle from './ThemeToggle';
 
 const NavUrls = [
     { text: 'Home', href: '/' },
@@ -26,7 +27,7 @@ export default function Navbar() {
         <div className="container mx-auto rounded-full bg-white shadow-md shadow-gray-300 lg:p-4 flex items-center justify-between lg:h-[80px] h-[60px] p-2">
             {/* Logo */}
             <AnimatedOnScroll animation="fade-right" delay={0.1}>
-                <Link href={'#top'} className="items-center justify-center flex overflow-clip rounded-full h-12 w-12 lg:h-16 lg:w-16 bg-white shadow shadow-slate-50">
+                <Link href={'/#top'} className="items-center justify-center flex overflow-clip rounded-full h-12 w-12 lg:h-16 lg:w-16 bg-white shadow shadow-slate-50">
                     <Image src={'/assets/logo.png'} className="rounded-full" width={60} height={60} alt="Logo" priority />
                 </Link>
             </AnimatedOnScroll>
@@ -44,6 +45,9 @@ export default function Navbar() {
 
             {/* Right Side Buttons */}
             <div className="flex items-center gap-2">
+                <div className="lg:flex hidden items-center justify-center">
+                    <ThemeToggle />
+                </div>
                 {/* Let's Talk Button */}
                 <AnimatedOnScroll animation="fade-left" delay={0.6}>
                     <Link href={'#contact'} className="sm:flex hidden items-center gap-2 px-4 py-2 bg-primary hover:bg-white border hover:border-primary border-white text-white hover:text-primary rounded-full transition-all">

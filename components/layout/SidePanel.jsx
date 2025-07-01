@@ -37,7 +37,7 @@ export default function SidePanel({ isOpen, onClose }) {
 
             {/* Side Panel */}
             <div
-                className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`fixed top-0 right-0 h-full w-80 bg-secondary light:bg-light-secondary shadow-2xl shadow-slate-500 z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
                 role="dialog"
                 aria-modal="true"
             >
@@ -45,16 +45,16 @@ export default function SidePanel({ isOpen, onClose }) {
 
                     {/* Header */}
                     <AnimatedOnScroll animation="fade-down" delay={0.1}>
-                        <div className="flex items-center justify-between p-6 border-b border-gray-100">
-                            <Link onClick={onClose} href={'#top'} className="items-center justify-center flex overflow-clip rounded-full h-12 w-12 lg:h-16 lg:w-16 bg-white shadow shadow-slate-50">
+                        <div className="flex items-center justify-between p-6 border-b border-secondary light:border-light-primary">
+                            <Link onClick={onClose} href={'#top'} className="items-center justify-center flex overflow-clip rounded-full h-12 w-12 lg:h-16 lg:w-16 bg-primary light:bg-light-secondary shadow shadow-slate-50 light:shadow-primary">
                                 <Image src={'/assets/logo.png'} className="rounded-full" width={60} height={60} alt="Logo" priority />
                             </Link>
                             <button
                                 onClick={onClose}
                                 aria-label="Close menu"
-                                className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                                className="p-2 rounded-full hover:bg-secondary light:hover:bg-light-secondary transition-colors"
                             >
-                                <IoClose className="text-2xl text-secondary" />
+                                <IoClose className="text-2xl text-light-secondary light:text-light-primary" />
                             </button>
                         </div>
                     </AnimatedOnScroll>
@@ -67,7 +67,7 @@ export default function SidePanel({ isOpen, onClose }) {
                                     <Link
                                         href={navUrl.href}
                                         onClick={onClose}
-                                        className="block text-lg font-semibold text-secondary hover:text-primary transition-colors py-2"
+                                        className="block text-lg font-semibold text-light-secondary light:text-light-primary hover:text-primary light:hover:text-light-primary transition-colors py-2"
                                     >
                                         {navUrl.text}
                                     </Link>
@@ -77,19 +77,19 @@ export default function SidePanel({ isOpen, onClose }) {
                     </div>
 
                     {/* Footer Actions */}
-                    <div className="p-6 border-t border-gray-100 space-y-4">
-                        {/* Theme Toggle (if you want to enable later) */}
-                        {/* <div className="flex items-center justify-between">
-                            <span className="text-secondary font-medium">Theme</span>
+                    <div className="p-6 border-t border-secondary light:border-light-primary space-y-4">
+                        {/* Theme Toggle */}
+                        <div className="flex items-center justify-between">
+                            <span className="text-light-secondary light:text-light-primary font-medium">Theme</span>
                             <ThemeToggle />
-                        </div> */}
+                        </div>
 
                         {/* Let's Talk Button */}
                         <AnimatedOnScroll animation="fade-up" delay={0.5}>
                             <Link
                                 href={'#contact'}
                                 onClick={onClose}
-                                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-primary hover:bg-white border hover:border-primary border-white text-white hover:text-primary rounded-full transition-all font-medium"
+                                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-primary light:bg-light-primary hover:bg-secondary light:hover:bg-light-secondary border hover:border-primary border-primary light:border-light-primary hover:text-primary light:hover:text-light-primary text-light-secondary light:text-light-secondary rounded-full transition-all font-medium"
                             >
                                 <span>Let's Talk</span>
                                 <FaArrowUpRightFromSquare />

@@ -20,7 +20,7 @@ export default function Portfolio() {
     return (
         <section
             id='portfolio'
-            className="py-10 lg:py-20 bg-secondary overflow-hidden"
+            className="py-10 lg:py-20 bg-gradient-to-br from-slate-900 via-secondary to-slate-900 light:bg-gradient-to-br light:from-light-secondary light:via-light-primary/30 light:to-light-secondary overflow-hidden"
             aria-labelledby="portfolio-title"
         >
             <div className="container mx-auto px-4">
@@ -30,11 +30,11 @@ export default function Portfolio() {
                     <div className="lg:text-center mb-10 lg:mb-16">
                         <h2
                             id="portfolio-title"
-                            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 lg:mb-4"
+                            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white light:text-gray-900 mb-2 lg:mb-4"
                         >
-                            Look at my <span className="text-primary">Portfolio</span>
+                            Look at my <span className="text-primary light:text-light-primary">Portfolio</span>
                         </h2>
-                        <p className="text-white/80 text-lg w-full lg:max-w-[70%] mx-auto leading-relaxed lg:px-4">
+                        <p className="text-white/80 light:text-gray-700 text-lg w-full lg:max-w-[70%] mx-auto leading-relaxed lg:px-4">
                             {portfolioData.description}
                         </p>
                     </div>
@@ -49,7 +49,7 @@ export default function Portfolio() {
                             delay={0.1 + (index * 0.1)}
                         >
                             <article
-                                className="group rounded-2xl p-6 border border-slate-700/50 hover:border-primary/30 transition-all duration-300 hover:scale-[1.02] h-96 flex items-center justify-center relative overflow-hidden"
+                                className="group rounded-2xl p-6 border border-slate-700/50 light:border-light-primary/20 hover:border-primary/30 light:hover:border-light-primary transition-all duration-300 hover:scale-[1.02] h-96 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-800 light:bg-gradient-to-br light:from-white light:via-light-primary/10 light:to-white backdrop-blur-sm"
                                 aria-labelledby={`portfolio-item-${skill.id}`}
                             >
                                 <Image
@@ -66,7 +66,7 @@ export default function Portfolio() {
                                         href={skill.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl rounded-full p-4 flex items-center justify-center transition-all"
+                                        className="bg-primary light:bg-light-primary hover:bg-secondary light:hover:bg-secondary text-white hover:text-primary light:hover:text-light-primary border border-secondary light:border-secondary hover:border-primary light:hover:border-light-primary shadow-lg hover:shadow-xl rounded-full p-4 flex items-center justify-center transition-all"
                                         aria-label={`View ${skill.name} project in a new tab`}
                                     >
                                         <GiBinoculars className="text-2xl" />
@@ -76,7 +76,7 @@ export default function Portfolio() {
                                 {/* Project name badge */}
                                 <div
                                     id={`portfolio-item-${skill.id}`}
-                                    className="absolute bottom-4 left-4 bg-slate-900/80 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm"
+                                    className="absolute bottom-4 left-4 bg-slate-900/80 light:bg-light-primary text-white light:text-gray-900 px-3 py-1 rounded-full text-sm backdrop-blur-sm"
                                 >
                                     {skill.name}
                                 </div>

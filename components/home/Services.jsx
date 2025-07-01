@@ -27,7 +27,7 @@ export default function Services() {
     return (
         <section
             id='services'
-            className="lg:py-20 py-10 bg-slate-900"
+            className="lg:py-20 py-10 bg-slate-900 light:bg-gradient-to-br light:from-light-secondary light:via-white light:to-light-secondary"
             aria-labelledby="services-title"
         >
             <div className="container mx-auto px-4">
@@ -37,11 +37,11 @@ export default function Services() {
                     <div className="lg:text-center mb-10 lg:mb-16">
                         <h2
                             id="services-title"
-                            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white lg:mb-6 mb-2"
+                            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white light:text-secondary lg:mb-6 mb-2"
                         >
-                            My <span className="text-primary">Services</span>
+                            My <span className="text-primary light:text-secondary">Services</span>
                         </h2>
-                        <p className="text-white/80 text-lg w-full lg:max-w-[70%] mx-auto leading-relaxed lg:px-4">
+                        <p className="text-white/80 light:text-secondary text-lg w-full lg:max-w-[70%] mx-auto leading-relaxed lg:px-4">
                             {servicesData.description}
                         </p>
                     </div>
@@ -59,17 +59,17 @@ export default function Services() {
                                 className="group relative"
                                 aria-labelledby={`service-title-${service.id}`}
                             >
-                                <div className="bg-slate-800/50 backdrop-blur-sm rounded-3xl p-6 border border-slate-700/50 hover:border-primary/30 transition-all duration-300">
+                                <div className="bg-slate-800/50 light:bg-light-primary/10 backdrop-blur-sm rounded-3xl p-6 border border-slate-700/50 light:border-light-primary/50 hover:border-primary/30 light:hover:border-light-primary transition-all duration-300">
                                     {/* Service Title */}
                                     <h3
                                         id={`service-title-${service.id}`}
-                                        className="text-xl font-semibold text-white mb-6"
+                                        className="text-xl font-semibold text-white light:text-light-primary mb-6"
                                     >
                                         {service.title}
                                     </h3>
 
                                     {/* Image Container */}
-                                    <div className="relative rounded-2xl overflow-hidden bg-slate-700/30 aspect-[4/3] mb-6">
+                                    <div className="relative rounded-2xl overflow-hidden bg-slate-700/30 light:bg-light-primary/10 aspect-[4/3] mb-6">
                                         <Image
                                             priority
                                             src={service.image || "/assets/placeholder.png"}
@@ -79,13 +79,13 @@ export default function Services() {
                                         />
 
                                         {/* Overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 light:from-light-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     </div>
 
                                     {/* Arrow Button */}
                                     <Link
                                         href={service.href}
-                                        className="absolute bottom-8 right-8 w-12 h-12 bg-primary hover:bg-secondary border border-secondary text-white hover:text-primary hover:border-primary rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                                        className="absolute bottom-8 right-8 w-12 h-12 bg-primary light:bg-light-primary hover:bg-secondary light:hover:bg-secondary border border-secondary light:border-light-primary text-white light:text-white hover:text-primary light:hover:text-secondary hover:border-primary light:hover:border-secondary rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
                                         aria-label={`Contact about ${service.title}`}
                                     >
                                         <FaEye className="w-5 h-5" />

@@ -26,7 +26,7 @@ export default function WhyHireMe() {
     return (
         <section
             id="whyhireme"
-            className="py-10 lg:py-20 bg-slate-950 overflow-hidden"
+            className="py-10 lg:py-20 bg-slate-950 light:bg-light-secondary overflow-hidden"
             aria-labelledby="whyhireme-title"
         >
             <div className="container mx-auto px-4">
@@ -34,7 +34,7 @@ export default function WhyHireMe() {
 
                     {/* Left Side - Content */}
                     <AnimatedOnScroll animation="fade-right" delay={0.1}>
-                        <div className="text-white space-y-8 order-2 lg:order-1">
+                        <div className="text-white light:text-light-primary space-y-8 order-2 lg:order-1">
 
                             {/* Main Title */}
                             <AnimatedOnScroll animation="fade-down" delay={0.2}>
@@ -42,13 +42,13 @@ export default function WhyHireMe() {
                                     id="whyhireme-title"
                                     className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
                                 >
-                                    Why <span className="text-primary">Hire Me?</span>
+                                    Why <span className="text-primary light:text-light-primary">Hire Me?</span>
                                 </h2>
                             </AnimatedOnScroll>
 
                             {/* Description */}
                             <AnimatedOnScroll animation="fade-up" delay={0.3}>
-                                <p className="text-white/80 text-lg leading-relaxed">
+                                <p className="text-white/80 light:text-secondary text-lg leading-relaxed">
                                     {whyHireMeData.description}
                                 </p>
                             </AnimatedOnScroll>
@@ -56,7 +56,7 @@ export default function WhyHireMe() {
                             {/* Statistics Cards */}
                             <AnimatedOnScroll animation="zoom-in" delay={0.4}>
                                 <div
-                                    className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50"
+                                    className="bg-slate-800/50 light:bg-light-primary/10 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 light:border-light-primary/50"
                                     aria-label="Key achievements"
                                 >
                                     <div className="grid grid-cols-3 gap-6">
@@ -71,11 +71,11 @@ export default function WhyHireMe() {
                                                         id={`stat-${stat.id}`}
                                                         className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2"
                                                     >
-                                                        <span className={stat.id === 2 ? "text-primary" : "text-white"}>
+                                                        <span className={stat.id === 2 ? "text-primary light:text-light-primary" : "text-white light:text-light-primary"}>
                                                             {stat.number}
                                                         </span>
                                                     </div>
-                                                    <p className="text-white/80 text-sm sm:text-base leading-tight">
+                                                    <p className="text-white/80 light:text-secondary text-sm sm:text-base leading-tight">
                                                         {stat.label}
                                                     </p>
                                                 </article>
@@ -93,8 +93,8 @@ export default function WhyHireMe() {
                                             key={index}
                                             href={button.href}
                                             className={`px-4 py-2 rounded-full font-semibold transition-all flex gap-2 items-center ${button.isPrimary
-                                                ? 'bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl'
-                                                : 'bg-white/10 hover:bg-primary text-white border border-white/30 backdrop-blur-sm'
+                                                ? 'bg-primary light:bg-secondary hover:bg-secondary light:hover:bg-primary text-white hover:text-primary light:hover:text-secondary border border-secondary light:border-secondary hover:border-primary light:hover:border-light-primary shadow-lg hover:shadow-xl'
+                                                : 'bg-white/10 light:bg-light-primary/10 hover:bg-primary light:hover:bg-light-primary text-white light:text-light-primary light:hover:text-secondary border border-white/30 light:border-light-primary/50 backdrop-blur-sm'
                                                 }`}
                                             aria-label={button.isPrimary ? "Contact Me" : "View My Portfolio"}
                                         >
@@ -115,7 +115,7 @@ export default function WhyHireMe() {
                     <AnimatedOnScroll animation="zoom-in" delay={0.2}>
                         <div className="relative flex justify-center lg:justify-end order-1 lg:order-2">
                             <div className="relative z-10">
-                                <div className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px] rounded-full border-4 border-primary overflow-hidden bg-white relative">
+                                <div className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px] rounded-full border-4 border-primary light:border-light-primary overflow-hidden bg-white relative">
                                     <Image
                                         src={whyHireMeData.image}
                                         alt="Muhammad Hamid Raza profile image"

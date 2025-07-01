@@ -90,16 +90,16 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="relative min-h-screen bg-cover bg-center flex items-center justify-center px-4 py-16 overflow-hidden"
+            className="relative min-h-screen bg-cover bg-center flex items-center justify-center px-4 py-16 overflow-hidden light:bg-gradient-to-br light:from-light-secondary light:via-white light:to-light-secondary"
             style={{ backgroundImage: `url(${bgImage})` }}
             aria-labelledby="contact-title"
         >
-            <div className="absolute inset-0 bg-black opacity-70" aria-hidden="true"></div>
+            <div className="absolute inset-0 bg-black opacity-70 light:bg-white light:opacity-80" aria-hidden="true"></div>
 
             <AnimatedOnScroll animation="zoom-in" delay={0.1}>
-                <div className="relative z-10 w-full max-w-3xl bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg text-white">
+                <div className="relative z-10 w-full max-w-3xl bg-white/10 light:bg-light-primary/25 backdrop-blur-md p-8 rounded-2xl shadow-lg text-white light:text-gray-900">
                     <h2 id="contact-title" className="text-4xl md:text-5xl font-bold mb-8 text-center">
-                        Let&apos;s make your brand brilliant!
+                        Let's make your <span className="text-primary">brand</span> brilliant!
                     </h2>
 
                     <form onSubmit={handleOnSubmit} className="space-y-6" aria-label="Contact Form">
@@ -112,7 +112,7 @@ export default function Contact() {
                                     type="text"
                                     value={formData.name}
                                     onChange={handleOnChange}
-                                    className="w-full p-3 bg-gray-700/80 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                                    className="w-full p-3 bg-gray-700/80 light:bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary light:focus:ring-light-primary text-white light:text-gray-900"
                                     placeholder="Your name"
                                     required
                                     aria-required="true"
@@ -130,7 +130,7 @@ export default function Contact() {
                                     type="email"
                                     value={formData.email}
                                     onChange={handleOnChange}
-                                    className="w-full p-3 bg-gray-700/80 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                                    className="w-full p-3 bg-gray-700/80 light:bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary light:focus:ring-light-primary text-white light:text-gray-900"
                                     placeholder="example@domain.com"
                                     required
                                     aria-required="true"
@@ -147,7 +147,7 @@ export default function Contact() {
                                     name='message'
                                     value={formData.message}
                                     onChange={handleOnChange}
-                                    className="w-full p-3 bg-gray-700/80 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                                    className="w-full p-3 bg-gray-700/80 light:bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary light:focus:ring-light-primary text-white light:text-gray-900 h-32"
                                     placeholder="Tell me about your project"
                                     required
                                     aria-required="true"
@@ -163,7 +163,7 @@ export default function Contact() {
                                     <button
                                         type="button"
                                         onClick={() => setDropdownOpen(!dropdownOpen)}
-                                        className="w-full p-3 bg-gray-700/80 rounded-lg flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-primary"
+                                        className="w-full p-3 bg-gray-700/80 light:bg-gray-200 rounded-lg flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-primary light:focus:ring-light-primary text-white light:text-gray-900"
                                         aria-haspopup="listbox"
                                         aria-expanded={dropdownOpen}
                                         aria-labelledby="service-label"
@@ -182,7 +182,7 @@ export default function Contact() {
                                             {services.map((service) => (
                                                 <li
                                                     key={service.id}
-                                                    className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-all"
+                                                    className="px-4 py-2 hover:bg-primary light:hover:bg-light-primary hover:text-white cursor-pointer transition-all"
                                                     role="option"
                                                     aria-selected={formData.service === service.title}
                                                     onClick={() => handleServiceSelect(service.title)}
@@ -204,7 +204,7 @@ export default function Contact() {
                                     name='file'
                                     type="file"
                                     onChange={handleOnChange}
-                                    className="flex w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-secondary cursor-pointer transition-all"
+                                    className="flex w-full text-sm text-gray-300 light:text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-secondary light:file:bg-light-primary light:hover:file:bg-secondary cursor-pointer transition-all"
                                     aria-label="Attach a file"
                                 />
                             </div>
@@ -214,7 +214,7 @@ export default function Contact() {
                             <div className="flex justify-center">
                                 <button
                                     type="submit"
-                                    className="cursor-pointer flex items-center gap-2 px-4 py-2 rounded-full bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl transition-all duration-300"
+                                    className="cursor-pointer flex items-center gap-2 px-4 py-2 rounded-full bg-primary hover:bg-secondary text-white hover:text-primary border border-secondary hover:border-primary shadow-lg hover:shadow-xl transition-all duration-300 light:bg-light-primary light:hover:bg-light-secondary light:text-white light:hover:text-light-primary light:border-secondary light:hover:border-light-primary"
                                     aria-label="Submit Contact Form and Get a Quote"
                                 >
                                     <span>Get a Quote</span>

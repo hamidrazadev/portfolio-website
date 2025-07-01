@@ -17,7 +17,6 @@ function SkillCard({ skill, index }) {
             let start = 0;
             const end = skill.percentage;
             const duration = 1000;
-            const stepTime = Math.abs(Math.floor(duration / end));
             let startTime = null;
 
             const animate = (timestamp) => {
@@ -38,7 +37,7 @@ function SkillCard({ skill, index }) {
 
     return (
         <div
-            className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-primary/30 transition-all duration-300 hover:scale-105"
+            className="bg-slate-800/50 light:bg-light-secondary/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 light:border-light-primary/20 hover:border-primary/30 light:hover:border-light-primary transition-all duration-300 hover:scale-105"
             role="group"
             aria-labelledby={`skill-title-${index}`}
             aria-describedby={`skill-desc-${index}`}
@@ -58,14 +57,14 @@ function SkillCard({ skill, index }) {
             </div>
 
             {/* Skill Name */}
-            <h3 id={`skill-title-${index}`} className="text-xl font-semibold text-white text-center mb-6">
+            <h3 id={`skill-title-${index}`} className="text-xl font-semibold text-white light:text-gray-900 text-center mb-6">
                 {skill.name}
             </h3>
 
             {/* Progress Bar */}
             <div className="space-y-2 relative" ref={ref} aria-label={`${skill.name} proficiency level`}>
                 <div
-                    className="w-full bg-slate-700/50 rounded-full h-6 overflow-hidden"
+                    className="w-full bg-slate-700/50 light:bg-gray-300 rounded-full h-6 overflow-hidden"
                     role="progressbar"
                     aria-valuenow={displayPercentage}
                     aria-valuemin="0"
@@ -73,13 +72,13 @@ function SkillCard({ skill, index }) {
                     aria-label={`${skill.name} proficiency`}
                 >
                     <div
-                        className="h-full bg-gradient-to-l from-primary to-primary/80 rounded-full transition-all duration-1000 ease-in-out"
+                        className="h-full bg-gradient-to-l from-primary to-primary/80 light:from-light-primary light:to-light-primary/80 rounded-full transition-all duration-1000 ease-in-out"
                         style={{ width: isInView ? `${skill.percentage}%` : '0%' }}
                     />
                 </div>
 
                 <div className="text-center absolute inset-0 flex items-center justify-center">
-                    <span id={`skill-desc-${index}`} className="text-white font-bold">
+                    <span id={`skill-desc-${index}`} className="text-white font-bold light:text-white">
                         {displayPercentage}%
                     </span>
                 </div>
@@ -109,16 +108,20 @@ export default function MyWorkSkills() {
     }
 
     return (
-        <section id='myworkskills' className="py-10 lg:py-20 bg-slate-900" aria-labelledby="skills-title">
+        <section
+            id='myworkskills'
+            className="py-10 lg:py-20 bg-slate-900 light:bg-gradient-to-br light:from-light-secondary light:via-white light:to-light-secondary"
+            aria-labelledby="skills-title"
+        >
             <div className="container mx-auto px-4">
 
                 {/* Header Section */}
                 <AnimatedOnScroll animation="fade-down" delay={0.1}>
                     <div className="lg:text-center mb-10 lg:mb-16">
-                        <h2 id="skills-title" className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 lg:mb-4">
-                            My Work <span className="text-primary">Skills</span>
+                        <h2 id="skills-title" className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white light:text-gray-900 mb-2 lg:mb-4">
+                            My Work <span className="text-primary light:text-light-primary">Skills</span>
                         </h2>
-                        <p className="text-white/80 text-lg w-full lg:max-w-[70%] mx-auto leading-relaxed lg:px-4">
+                        <p className="text-white/80 light:text-gray-700 text-lg w-full lg:max-w-[70%] mx-auto leading-relaxed lg:px-4">
                             {skillsData.description}
                         </p>
                     </div>
