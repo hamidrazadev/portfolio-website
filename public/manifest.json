@@ -39,18 +39,32 @@
     ],
     "screenshots": [
         {
-            "src": "/assets/screenshot-desktop.png",
+            "src": "/assets/screenshot-desktop-dark-mode.png",
             "sizes": "1280x720",
             "type": "image/png",
             "form_factor": "wide",
-            "label": "Desktop View"
+            "label": "Desktop View (Dark Mode)"
         },
         {
-            "src": "/assets/screenshot-mobile.png",
+            "src": "/assets/screenshot-desktop-light-mode.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Desktop View (Light Mode)"
+        },
+        {
+            "src": "/assets/screenshot-mobile-dark-mode.png",
             "sizes": "720x1280",
             "type": "image/png",
             "form_factor": "narrow",
-            "label": "Mobile View"
+            "label": "Mobile View (Dark Mode)"
+        },
+        {
+            "src": "/assets/screenshot-mobile-light-mode.png",
+            "sizes": "720x1280",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Mobile View (Light Mode)"
         }
     ],
     "shortcuts": [

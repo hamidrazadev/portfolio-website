@@ -11,7 +11,7 @@
   --color-light-secondary: #fcece3;
 }
 
-button, a {
+button, button * , a, a *, svg {
   @apply cursor-pointer;
 }
 
