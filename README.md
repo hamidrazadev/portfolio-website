@@ -4,7 +4,7 @@ A modern, fully responsive personal portfolio website built with **Next.js** and
 
 ## 🔥 Live Demo
 
-👉 [View Live Site](https://hamidrazadev.github.io/portfolio-website)
+👉 [View Live Site](https://hamidrazadev.vercel.app)
 
 ---
 
@@ -24,9 +24,8 @@ A modern, fully responsive personal portfolio website built with **Next.js** and
 ## 🛠️ Tech Stack
 
 - **Frontend:** Next.js, React, Tailwind CSS
-- **PWA:** `next-pwa` plugin
 - **Icons:** React Icons
-- **Deployment:** Vercel / GitHub Pages
+- **Deployment:** Vercel
 
 ---
 
